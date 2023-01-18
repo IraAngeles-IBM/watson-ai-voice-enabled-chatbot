@@ -34,7 +34,7 @@ We show you how to create a chatbot using Watson Assistant, a tool that enables 
 
 **Step 1.** From the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant), provision an an instance of **Watson Assistant**.
   
-  ![Watson Assistant Catalog](./images/WA-Photo1.png)
+  ![Watson Assistant Catalog](images/WA-Photo1.png)
 
 **Step 2.**  Launch the Watson Assistant service.
 

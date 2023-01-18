@@ -4,3 +4,5 @@ theme:
 nav:
     - Home: 'index.md'
     - 'Watson Assistant': './Solution-Starter-Kit-Communication-2020/assistant/ASSISTANT.md'
+    - 'Adding Webhooks to Watson Assistant using IBM Functions' : 'Solution-Starter-Kit-Communication-2020/webhook/README.md'
+    - 'Use Case: Voice Enabled ChatBot using Node-RED': 'Solution-Starter-Kit-Communication-2020/node-red/Node-RED-chatbot.md'

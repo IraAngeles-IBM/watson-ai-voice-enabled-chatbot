@@ -34,49 +34,49 @@ We show you how to create a chatbot using Watson Assistant, a tool that enables 
 
 **Step 1.** From the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant), provision an an instance of **Watson Assistant**.
   
-  ![Watson Assistant Catalog](starter-kit/assistant/WA-Photo1.png)
+  ![Watson Assistant Catalog](images/WA-Photo1.png)
 
 **Step 2.**  Launch the Watson Assistant service.
 
 **Step 3.** Click **Create assistant** and follow [these detailed instructions](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add) for how to create an assistant.
   
-  ![Watson Assistant Photo2 ](starter-kit/assistant/WA-Photo2.png)
+  ![Watson Assistant Photo2 ](images/WA-Photo2.png)
 
 **Step 4.** Name the Watson Assistant instance **COVID Crisis Communication**
   
-  ![Watson Assistant Photo3 ](starter-kit/assistant/WA-Photo3.png)
+  ![Watson Assistant Photo3 ](images/WA-Photo3.png)
 
 **Step 5.** Click **Add Dialog skill** to add this to your assistant. Follow [the documentation](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) if you have questions.
   
-  ![Watson Assistant Photo4 ](starter-kit/assistant/WA-Photo4.png)
+  ![Watson Assistant Photo4 ](images/WA-Photo4.png)
 
 **Step 6.** Click **Import skill > Choose JSON file** and import the [`skill-CDC-COVID-FAQ.json`](https://github.com/IraAngeles-IBM/Solution-Starter-Kit-Communication-2020-ASEAN/blob/master/starter-kit/assistant/skill-CDC-COVID-FAQ.json) file.
   
-  ![Watson Assistant Photo5 ](starter-kit/assistant/WA-Photo5.png)
+  ![Watson Assistant Photo5 ](images/WA-Photo5.png)
 
 **Step 7.** Go back to the All Assistants page. From the action menu ( **`⋮`** ), open **Settings**.
   
-  ![Watson Assistant Photo6 ](starter-kit/assistant/WA-Photo6.png)
+  ![Watson Assistant Photo6 ](images/WA-Photo6.png)
 
 **Step 8.**  On the Settings tab, click **API Details** on the left and make a note of the `Assistant ID` and `Api Key` for future use.
   
-  ![Watson Assistant Photo7 ](starter-kit/assistant/WA-Photo7.png)
+  ![Watson Assistant Photo7 ](images/WA-Photo7.png)
 
 **Step 9.** Go back to the All Assistants page and click on the **Skills** link.
   
-  ![Watson Assistant Skills ](starter-kit/assistant/WA-Skills.png)
+  ![Watson Assistant Skills ](images/WA-Skills.png)
 
 **Step 10.** On the Skill page, click on the action menu ( **`⋮`** ), open **View API Details**.
   
-  ![Watson Assistant Skill Properties](starter-kit/assistant/WA-SkillAPIProperties.png)
+  ![Watson Assistant Skill Properties](images/WA-SkillAPIProperties.png)
 
 **Step 11.** On the Skill Details page, make note of the `Skill ID` for future use.
   
-  ![Watson Assistant Skill Details](starter-kit/assistant/WA-SkillDetails.png)
+  ![Watson Assistant Skill Details](images/WA-SkillDetails.png)
 
 **Step 12.**  Go back to your dialog skill and click on the **Preview Link** button on the side to get a link to test and verify your assistant.
   
-  ![Watson Assistant Photo9 ](starter-kit/assistant/WA-Photo91.png)
+  ![Watson Assistant Photo9 ](images/WA-Photo91.png)
 
 **Step 13.** Ask the Watson Assistant chatbot some questions about COVID-19.
 
@@ -105,7 +105,7 @@ It sends the data as part of a HTTP POST request to the URL that you specify as 
 
 **Step 1.**  From your IBM Cloud account, go to Watson Discovery.
 
-![Discover Service](starter-kit/webhook/images/discovery-service.png)
+![Discover Service](images/discovery-service.png)
 
 **Step 2.**  Create a new lite service.
 
