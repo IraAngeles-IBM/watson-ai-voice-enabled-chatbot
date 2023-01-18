@@ -4,22 +4,22 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>CHAPTER 2: Create a voice-enabled COVID-19 chatbot using Node-RED - IBM Watson AI</title>
-    <link rel="stylesheet" href="../../../../css/theme.css" />
-    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Use Case: Voice Enabled ChatBot using Node-RED - IBM Watson AI</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "CHAPTER 2: Create a voice-enabled COVID-19 chatbot using Node-RED";
-        var mkdocs_page_input_path = "Solution-Starter-Kit-Communication-2020/starter-kit/node-red/Node-RED-chatbot.md";
+        var mkdocs_page_name = "Use Case: Voice Enabled ChatBot using Node-RED";
+        var mkdocs_page_input_path = "Solution-Starter-Kit-Communication-2020/node-red/Node-RED-chatbot.md";
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../../../../js/jquery-3.6.0.min.js" defer></script>
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
-      <script src="../../../../js/html5shiv.min.js"></script>
+      <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
       <script>hljs.initHighlightingOnLoad();</script> 
@@ -31,9 +31,9 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="../../../.." class="icon icon-home"> IBM Watson AI
+          <a href="../../.." class="icon icon-home"> IBM Watson AI
         </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -41,11 +41,79 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../assistant/ASSISTANT/">Watson Assistant</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../assistant/ASSISTANT/">Watson Assistant</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../webhook/">Adding Webhooks to Watson Assistant using IBM Functions</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Use Case: Voice Enabled ChatBot using Node-RED</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#authors">Authors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#learning-objectives">Learning objectives</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#estimated-time">Estimated time</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#architecture-diagram">Architecture diagram</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#voice-enabled-covid-crisis-communications-chatbot-using-node-red">Voice enabled COVID Crisis Communications Chatbot using Node-RED</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#learn-about-node-red">Learn about Node-RED</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-node-red-dependencies-nodes">Install Node-RED Dependencies nodes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#local-installation-instructions">Local installation instructions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ibm-cloud-installation-instructions">IBM Cloud installation instructions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#explore-node-red-node-watson-node-red-nodes">Explore node-red-node-watson Node-RED nodes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#import-and-deploy-the-covid-19-crisis-communication-chatbot-example">Import and deploy the COVID-19 crisis communication chatbot example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-watson-services-on-ibm-cloud">Create Watson Services on IBM Cloud</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#create-a-watson-assistant-instance">Create a Watson Assistant instance</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create-a-watson-speech-to-text-service-instance">Create a Watson Speech to Text service instance</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create-a-watson-text-to-speech-service-instance">Create a Watson Text to Speech service instance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enable-watson-speech-nodes-with-api-keys">Enable Watson Speech Nodes with API keys</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enable-watson-assistant-node-with-the-covid-19-workspace-id-and-api-key">Enable Watson Assistant node with the COVID-19 Workspace ID and API key</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parse-intents-and-invoke-api-calls">Parse intents and invoke API calls</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deploy-the-node-red-flows">Deploy the Node-RED flows</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#talk-to-your-covid-19-crisis-chatbot">Talk to your COVID-19 crisis chatbot</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#build-a-node-red-covid-statistics-dashboard">Build a Node-RED COVID statistics dashboard</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#learn-more-about-the-dashboard-code">Learn more about the dashboard code</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#congratulations-on-building-a-call-for-code-crisis-communication-solution">Congratulations on building a Call for Code Crisis Communication solution!</a>
+    </li>
+    </ul>
                 </li>
               </ul>
       </div>
@@ -55,13 +123,13 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../..">IBM Watson AI</a>
+          <a href="../../..">IBM Watson AI</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>CHAPTER 2: Create a voice-enabled COVID-19 chatbot using Node-RED</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Use Case: Voice Enabled ChatBot using Node-RED</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -103,7 +171,7 @@
 <h2 id="architecture-diagram">Architecture diagram</h2>
 <h3 id="voice-enabled-covid-crisis-communications-chatbot-using-node-red">Voice enabled COVID Crisis Communications Chatbot using Node-RED</h3>
 <p>The following diagram shows the workflow for a Node-RED chatbot that answers questions about COVID-19.</p>
-<p><img alt="Crisis Comms Architecture diagram" src="../../../images/Crisis-Comms-Architecture-Node-RED.png" /></p>
+<p><img alt="Crisis Comms Architecture diagram" src="../../images/Crisis-Comms-Architecture-Node-RED.png" /></p>
 <ol>
 <li>A user visits a voice enabled Node-RED website with the COVID-19 chatbot and asks a question.</li>
 <li>Node-RED records the speech wav audio format and calls the Watson Speech to Text service hosted in IBM Cloud.</li>
@@ -183,7 +251,7 @@
 <p><img alt="Skill details" src="../images/skill_id_and_api.png" /></p>
 </li>
 <li>
-<p>If you haven't created <a href="https://cloud.ibm.com/catalog/services/watson-assistant">Watson Assistant service instance</a>, follow these <a href="../../../ASSISTANT/">instructions</a> to provision a Watson Assistant chatbot for COVID-19</p>
+<p>If you haven't created <a href="https://cloud.ibm.com/catalog/services/watson-assistant">Watson Assistant service instance</a>, follow these <a href="../../ASSISTANT.md">instructions</a> to provision a Watson Assistant chatbot for COVID-19</p>
 </li>
 </ul>
 <h4 id="create-a-watson-speech-to-text-service-instance">Create a Watson Speech to Text service instance</h4>
@@ -287,6 +355,9 @@ return msg;
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../webhook/" class="btn btn-neutral float-left" title="Adding Webhooks to Watson Assistant using IBM Functions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
 
   <hr/>
 
@@ -308,13 +379,15 @@ return msg;
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../../webhook/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
     
   </span>
 </div>
-    <script>var base_url = '../../../..';</script>
-    <script src="../../../../js/theme_extra.js" defer></script>
-    <script src="../../../../js/theme.js" defer></script>
-      <script src="../../../../search/main.js" defer></script>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

@@ -48,6 +48,14 @@
                 <li class="toctree-l1"><a class="reference internal" href="assistant/ASSISTANT/">Watson Assistant</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="webhook/">Adding Webhooks to Watson Assistant using IBM Functions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="node-red/Node-RED-chatbot/">Use Case: Voice Enabled ChatBot using Node-RED</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -238,14 +246,14 @@
 <h3 id="connect-your-chatbot-to-data-sources-via-a-webhook">Connect your chatbot to data sources via a webhook</h3>
 <p>Now that you’ve created your Watson Assistant-enabled chatbot, you need to connect it to a data source. With Watson Assistant, you need to do this via a webhook.</p>
 <p>A webhook is a mechanism that allows you to call out to an external program based on something happening in your program. When used in a dialog skill, a webhook is triggered when the assistant processes a node that has a webhook enabled. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables. It sends the data as part of a HTTP POST request to the URL that you specify as part of your webhook definition. The URL that receives the webhook is the listener. It performs a predefined action using the information that you pass to it as specified in the webhook definition, and can optionally return a response.</p>
-<p><a href="starter-kit/webhook/">Follow these instructions for setting up webhook</a> with the Watson Assistant chatbot you just provisioned.</p>
+<p><a href="./starter-kit/webhook/README.md">Follow these instructions for setting up webhook</a> with the Watson Assistant chatbot you just provisioned.</p>
 <h3 id="integrate-your-covid-19-chatbot-with-slack">Integrate your COVID-19 chatbot with Slack</h3>
 <p>Now that you have a functioning Watson Assistant, let's deploy it to Slack. Slack is a cloud-based messaging application that helps people collaborate with one another. After you configure a dialog skill and add it to an assistant, you can integrate the assistant with Slack.</p>
 <p>When integrated, depending on the events that you configure the assistant to support, your assistant can respond to questions that are asked in direct messages or in channels where the assistant is directly mentioned.</p>
 <p><a href="/starter-kit/slack/README.md">Read these instructions</a> to learn how to integrate your COVID-19 chatbot with Slack.</p>
 <p><img alt="Slack Gif" src="/starter-kit/slack/readme_images/Slack.gif" /></p>
 <h3 id="integrate-your-covid-19-chatbot-with-node-red">Integrate your COVID-19 chatbot with Node-RED</h3>
-<p>Want to create a voice-enabled chatbot? This tutorial teaches you how to <a href="starter-kit/node-red/">create a voice enabled chatbot using Node-RED</a> and the Watson Assistant, Watson Speech to Text, and Watson Text to Speech nodes.</p>
+<p>Want to create a voice-enabled chatbot? This tutorial teaches you how to <a href="./starter-kit/node-red/README.md">create a voice enabled chatbot using Node-RED</a> and the Watson Assistant, Watson Speech to Text, and Watson Text to Speech nodes.</p>
 <h3 id="embed-your-covid-19-chatbot-on-a-nodejs-website">Embed your COVID-19 chatbot on a Node.js website</h3>
 <p>Finally, you can embed your COVID-19 crisis communication chatbot on a Node.js website.</p>
 <ul>

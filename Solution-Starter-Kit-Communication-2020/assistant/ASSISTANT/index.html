@@ -58,6 +58,14 @@
     </ul>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../webhook/">Adding Webhooks to Watson Assistant using IBM Functions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../node-red/Node-RED-chatbot/">Use Case: Voice Enabled ChatBot using Node-RED</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -105,28 +113,28 @@
 <h1 id="create-your-chatbot-by-setting-up-a-watson-assistant-instance">Create your chatbot by setting up a Watson Assistant instance</h1>
 <p>We show you how to create a chatbot using Watson Assistant, a tool that enables you to build conversational interfaces into any application, device, or channel.</p>
 <p><strong>Step 1.</strong> From the <a href="https://cloud.ibm.com/catalog/services/watson-assistant">IBM Cloud catalog</a>, provision an an instance of <strong>Watson Assistant</strong>.</p>
-<p><img alt="Watson Assistant Catalog" src="starter-kit/assistant/WA-Photo1.png" /></p>
+<p><img alt="Watson Assistant Catalog" src="../images/WA-Photo1.png" /></p>
 <p><strong>Step 2.</strong>  Launch the Watson Assistant service.</p>
 <p><strong>Step 3.</strong> Click <strong>Create assistant</strong> and follow <a href="https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add">these detailed instructions</a> for how to create an assistant.</p>
-<p><img alt="Watson Assistant Photo2 " src="starter-kit/assistant/WA-Photo2.png" /></p>
+<p><img alt="Watson Assistant Photo2 " src="../images/WA-Photo2.png" /></p>
 <p><strong>Step 4.</strong> Name the Watson Assistant instance <strong>COVID Crisis Communication</strong></p>
-<p><img alt="Watson Assistant Photo3 " src="starter-kit/assistant/WA-Photo3.png" /></p>
+<p><img alt="Watson Assistant Photo3 " src="../images/WA-Photo3.png" /></p>
 <p><strong>Step 5.</strong> Click <strong>Add Dialog skill</strong> to add this to your assistant. Follow <a href="https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add">the documentation</a> if you have questions.</p>
-<p><img alt="Watson Assistant Photo4 " src="starter-kit/assistant/WA-Photo4.png" /></p>
+<p><img alt="Watson Assistant Photo4 " src="../images/WA-Photo4.png" /></p>
 <p><strong>Step 6.</strong> Click <strong>Import skill &gt; Choose JSON file</strong> and import the <a href="https://github.com/IraAngeles-IBM/Solution-Starter-Kit-Communication-2020-ASEAN/blob/master/starter-kit/assistant/skill-CDC-COVID-FAQ.json"><code>skill-CDC-COVID-FAQ.json</code></a> file.</p>
-<p><img alt="Watson Assistant Photo5 " src="starter-kit/assistant/WA-Photo5.png" /></p>
+<p><img alt="Watson Assistant Photo5 " src="../images/WA-Photo5.png" /></p>
 <p><strong>Step 7.</strong> Go back to the All Assistants page. From the action menu ( <strong><code>⋮</code></strong> ), open <strong>Settings</strong>.</p>
-<p><img alt="Watson Assistant Photo6 " src="starter-kit/assistant/WA-Photo6.png" /></p>
+<p><img alt="Watson Assistant Photo6 " src="../images/WA-Photo6.png" /></p>
 <p><strong>Step 8.</strong>  On the Settings tab, click <strong>API Details</strong> on the left and make a note of the <code>Assistant ID</code> and <code>Api Key</code> for future use.</p>
-<p><img alt="Watson Assistant Photo7 " src="starter-kit/assistant/WA-Photo7.png" /></p>
+<p><img alt="Watson Assistant Photo7 " src="../images/WA-Photo7.png" /></p>
 <p><strong>Step 9.</strong> Go back to the All Assistants page and click on the <strong>Skills</strong> link.</p>
-<p><img alt="Watson Assistant Skills " src="starter-kit/assistant/WA-Skills.png" /></p>
+<p><img alt="Watson Assistant Skills " src="../images/WA-Skills.png" /></p>
 <p><strong>Step 10.</strong> On the Skill page, click on the action menu ( <strong><code>⋮</code></strong> ), open <strong>View API Details</strong>.</p>
-<p><img alt="Watson Assistant Skill Properties" src="starter-kit/assistant/WA-SkillAPIProperties.png" /></p>
+<p><img alt="Watson Assistant Skill Properties" src="../images/WA-SkillAPIProperties.png" /></p>
 <p><strong>Step 11.</strong> On the Skill Details page, make note of the <code>Skill ID</code> for future use.</p>
-<p><img alt="Watson Assistant Skill Details" src="starter-kit/assistant/WA-SkillDetails.png" /></p>
+<p><img alt="Watson Assistant Skill Details" src="../images/WA-SkillDetails.png" /></p>
 <p><strong>Step 12.</strong>  Go back to your dialog skill and click on the <strong>Preview Link</strong> button on the side to get a link to test and verify your assistant.</p>
-<p><img alt="Watson Assistant Photo9 " src="starter-kit/assistant/WA-Photo91.png" /></p>
+<p><img alt="Watson Assistant Photo9 " src="../images/WA-Photo91.png" /></p>
 <p><strong>Step 13.</strong> Ask the Watson Assistant chatbot some questions about COVID-19.</p>
 <p align="center">
 <img width="50%" height="50%" src="https://raw.githubusercontent.com/IraAngeles-IBM/Solution-Starter-Kit-Communication-2020-ASEAN/master/starter-kit/assistant/WA-Photo101.png">
@@ -144,7 +152,7 @@
 <p>It sends the data as part of a HTTP POST request to the URL that you specify as part of your webhook definition. The URL that receives the webhook is the listener. It performs a predefined action using the information that you pass to it as specified in the webhook definition, and can optionally return a response.</p>
 <h2 id="make-use-of-discovery-to-get-news-information">Make use of Discovery to get news information</h2>
 <p><strong>Step 1.</strong>  From your IBM Cloud account, go to Watson Discovery.</p>
-<p><img alt="Discover Service" src="starter-kit/webhook/images/discovery-service.png" /></p>
+<p><img alt="Discover Service" src="images/discovery-service.png" /></p>
 <p><strong>Step 2.</strong>  Create a new lite service.</p>
 <p><img alt="Create Discover Service" src="starter-kit/webhook/images/create-discovery-service.png" /></p>
 <p><strong>Step 3.</strong>  Make note of the API key and the URL. You need that in the next steps.</p>
@@ -277,6 +285,7 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../webhook/" class="btn btn-neutral float-right" title="Adding Webhooks to Watson Assistant using IBM Functions">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -301,6 +310,8 @@
     
       <span><a href="../../.." style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../../webhook/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
