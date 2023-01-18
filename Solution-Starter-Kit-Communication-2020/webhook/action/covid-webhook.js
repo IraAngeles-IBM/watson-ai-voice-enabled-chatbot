@@ -50,41 +50,43 @@ async function main(params) {
     } catch (err) {
       return { error: "it failed : " + err };
     }
-  } else {
-    /*
-    * Use of the 'Watson Discovery' as resource
-    */
-    const discovery = new DiscoveryV1({
-      version: "2019-03-25",
-      iam_apikey: params.api_key,
-      url: params.url
-    });
-    const offset = getRandomInt(50);
-    const queryParams = {
-      environment_id: params.env_id,
-      collection_id: params.collection_id,
-      natural_language_query:
-        "corona virus " + params.input || "corona virus news",
-      count: 3,
-      offset: offset
-    };
-    try {
-      data = await discovery.query(queryParams);
-      if (data.results == undefined ) {
-          return { "discovery response error" : data };
-      }
-      let response = data.results.map((v, i) => {
-        return `${v.title}
-                 ${v.text}
-                 ${v.url}`;
-      });
-      return {
-        result:
-          "Here is three news article I found online.\n\n" +
-          response.join("\n\n")
-      };
-    } catch (err) {
-      return { error: "it failed : " + err };
-    }
-  }
+  } 
+  // removing Watson Discovery section... keeping for historical reasons
+  // else {
+  //   /*
+  //   * Use of the 'Watson Discovery' as resource
+  //   */
+  //   const discovery = new DiscoveryV1({
+  //     version: "2019-03-25",
+  //     iam_apikey: params.api_key,
+  //     url: params.url
+  //   });
+  //   const offset = getRandomInt(50);
+  //   const queryParams = {
+  //     environment_id: params.env_id,
+  //     collection_id: params.collection_id,
+  //     natural_language_query:
+  //       "corona virus " + params.input || "corona virus news",
+  //     count: 3,
+  //     offset: offset
+  //   };
+  //   try {
+  //     data = await discovery.query(queryParams);
+  //     if (data.results == undefined ) {
+  //         return { "discovery response error" : data };
+  //     }
+  //     let response = data.results.map((v, i) => {
+  //       return `${v.title}
+  //                ${v.text}
+  //                ${v.url}`;
+  //     });
+  //     return {
+  //       result:
+  //         "Here is three news article I found online.\n\n" +
+  //         response.join("\n\n")
+  //     };
+  //   } catch (err) {
+  //     return { error: "it failed : " + err };
+  //   }
+  // }
 }
