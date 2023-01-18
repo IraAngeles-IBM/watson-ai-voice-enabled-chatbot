@@ -1,3 +1,6 @@
 site_name: IBM Watson AI
 theme:
     name: readthedocs
+nav:
+    - Home: 'index.md'
+    - 'Watson Assistant': './Solution-Starter-Kit-Communication-2020/assistant/ASSISTANT.md'
