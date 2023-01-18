@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Adding Webhooks to Watson Assistant - IBM Watson AI</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Adding Webhooks to Watson Assistant";
+        var mkdocs_page_input_path = "Solution-Starter-Kit-Communication-2020/starter-kit/webhook/README.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> IBM Watson AI
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../assistant/ASSISTANT/">Watson Assistant</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">IBM Watson AI</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Adding Webhooks to Watson Assistant</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="adding-webhooks-to-watson-assistant">Adding Webhooks to Watson Assistant</h1>
+<p>You can query for dynamic data using webhooks in IBM Watson Assistant. Our crisis communication chatbot uses two different sources:</p>
+<ul>
+<li><a href="https://www.ibm.com/cloud/watson-discovery">Watson Discovery</a></li>
+<li><a href="https://covid19api.com/">COVID-19 API</a></li>
+<li><a href="https://weather.com/coronavirus">Weather Company Data</a></li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Create an <a href="https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&amp;eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&amp;cm_mmca1=000039JL&amp;cm_mmca2=10008917">IBM Cloud Account</a>.</li>
+<li>Create a Watson Assistant COVID-19 crisis communications chatbot. <a href="/README.md#getting-started">Follow these instructions</a></li>
+<li>Create a <a href="https://callforcode.weather.com/register/">Weather Company API Account</a></li>
+</ul>
+<h3 id="make-use-of-discovery-to-get-news-information">Make use of Discovery to get news information</h3>
+<ol>
+<li>From your IBM Cloud account, go to Watson Discovery.</li>
+</ol>
+<p><img alt="Discover Service" src="images/discovery-service.png" /></p>
+<ol>
+<li>Create a new lite service.</li>
+</ol>
+<p><img alt="Create Discover Service" src="images/create-discovery-service.png" /></p>
+<ol>
+<li>Make note of the API key and the URL. You need that in the next steps.</li>
+</ol>
+<p><img alt="Credentials" src="images/discovery-credentials.png" /></p>
+<ol>
+<li>Open the Watson Discovery NEWS service, which is a prepopulated discovery dataset updated and maintained by the Watson Discovery team. </li>
+</ol>
+<p><img alt="Watson Discovery NEWS" src="images/watson-discovery-news.png" /></p>
+<ol>
+<li>From the top right corner, open the API tab. Make note of the Collection ID and Environment ID.</li>
+</ol>
+<p><img alt="NEWS Api info" src="images/news-api-info.png" /></p>
+<h3 id="get-a-weather-company-api-key">Get a Weather Company API Key</h3>
+<ol>
+<li>
+<p>Go to <a href="https://callforcode.weather.com/register/">https://callforcode.weather.com/register/</a></p>
+</li>
+<li>
+<p>Signup with your info. Your API key will be emailed to you.</p>
+</li>
+<li>
+<p>Save the API key for future use.</p>
+</li>
+</ol>
+<h3 id="creating-cloud-functions">Creating Cloud Functions</h3>
+<ol>
+<li>
+<p>In the IBM Cloud catalog, go to <a href="https://cloud.ibm.com/functions/">IBM Cloud Functions</a>.</p>
+</li>
+<li>
+<p>Click <strong>Start Creating</strong>.</p>
+</li>
+</ol>
+<p><img alt="functions" src="images/cloud-functions.png" /></p>
+<ol>
+<li>Select <strong>Create Action</strong>.</li>
+</ol>
+<p><img alt="create" src="images/create-action.png" /></p>
+<ol>
+<li>Name your action. For the Runtime dropdown, select <strong>Node.js 10</strong>.</li>
+</ol>
+<p><img alt="environment" src="images/create-action-env.png" /></p>
+<ol>
+<li>Replace the code with <a href="action/covid-webhook.js">action/covid-webhook.js</a></li>
+</ol>
+<p><img alt="code" src="images/code.png" /></p>
+<ol>
+<li>Our code has two main parts. We decide whether to call the COVID-19 API or Watson Discovery based on a parameter sent on the function call. If a query param of <code>type=api</code> is set, you call the COVID-19 API on the <a href="https://api.covid19api.com/summary">summary endpoint</a>. </li>
+</ol>
+<p>It returns the data in the following format:</p>
+<pre><code>{
+  Countries: [
+    {
+      Country: &quot;&quot;,
+      Slug: &quot;&quot;,
+      NewConfirmed: 0,
+      TotalConfirmed: 0,
+      NewDeaths: 0,
+      TotalDeaths: 0,
+      NewRecovered: 0,
+      TotalRecovered: 0
+    },
+    {
+      Country: &quot; Azerbaijan&quot;,
+      Slug: &quot;-azerbaijan&quot;,
+      NewConfirmed: 0,
+      TotalConfirmed: 0,
+      NewDeaths: 0,
+      TotalDeaths: 0,
+      NewRecovered: 0,
+      TotalRecovered: 0
+    },
+    ...
+  ]
+}
+</code></pre>
+<ol>
+<li>If there is specific location (Country/Country Code/US State) selected, you look for that location either using The Weather Company API or in the summary response and return the status for that location.</li>
+</ol>
+<p>For example, the response for <code>type=api</code> and <code>location=United States of America</code> is shown below.</p>
+<pre><code>{
+  &quot;result&quot;: &quot;Total Cases: 65778\nTotal Deaths: 942\nTotal Recovered: 361\n\nSource: Johns Hopkins CSSE&quot;
+}
+</code></pre>
+<ol>
+<li>If you want to make a call to the Discovery service, you need to set some parameters that let you call the IAM-enabled service. On the left, click on the <strong>Parameters</strong> tab. Add the following parameters: <ul>
+<li><code>api_key</code> (Discovery API Key)</li>
+<li><code>twcApiKey</code> (API key from The Weather Company)</li>
+<li><code>url</code> (Discovery Service URL)</li>
+<li><code>collection_id</code></li>
+<li><code>env_id</code></li>
+</ul>
+</li>
+</ol>
+<p><img alt="parameters" src="images/parameter.png" /></p>
+<ol>
+<li>Enable the action as a web action. To do so, select the <strong>Endpoints</strong> tab on the left. Click the checkbox beside "Enable as Web Action."</li>
+</ol>
+<p><img alt="endpoint" src="images/endpoint.png" /></p>
+<ol>
+<li>Make note of the HTTP URL. You will use this as the webhook for your assistant. You will have to add <code>.json</code> in the end of this url to make it work as a webhook.</li>
+</ol>
+<p><img alt="http endpoint" src="images/http-endpoint.png" /></p>
+<h3 id="integrate-data-sources-via-a-watson-assistant-webhook">Integrate data sources via a Watson Assistant webhook</h3>
+<ul>
+<li>
+<p>For detailed instructions on how to do this, check out our documentation: <a href="https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-webhooks">Making Programmatic Calls from Watson Assistant</a>.</p>
+</li>
+<li>
+<p>Bring up the COVID-19 assistant you created earlier. Find it in your IBM Cloud account under services &gt; IBM Watson Assistant. Open the dialog by clicking the <code>CDC COVID FAQ</code> Dialog.</p>
+</li>
+</ul>
+<p><img alt="assistant" src="images/assistant.png" /></p>
+<ol>
+<li>Click on <strong>Options</strong> on the left.</li>
+</ol>
+<p><img alt="options" src="images/options.png" /></p>
+<ol>
+<li>Under Options &gt; Webhooks, in the URL text box, paste the URL from the Cloud Funciton step. Make sure to add a <code>.json</code> at the end of the URL.</li>
+</ol>
+<p><img alt="url" src="images/add-url.png" /></p>
+<ol>
+<li>Select <strong>Dialog</strong> on the left navigation.</li>
+</ol>
+<p><img alt="dialog" src="images/dialog.png" /></p>
+<ol>
+<li>
+<p>Open up any dialog node you want to add a webhook call for. </p>
+</li>
+<li>
+<p>After selecting the node, click <strong>Customize</strong>.</p>
+</li>
+</ol>
+<p><img alt="customize" src="images/customize.png" /></p>
+<ol>
+<li>Enable Webhooks by moving the toggle button to <strong>On</strong> in the Webhooks section. Click <strong>Save</strong>.</li>
+</ol>
+<p><img alt="webhooks" src="images/enable-webhook.png" /></p>
+<ol>
+<li>Add any parameter your webhook needs. These will be sent as query parameters.</li>
+</ol>
+<p><img alt="webhook parameters" src="images/webhook-parameter.png" /></p>
+<ol>
+<li>Test that your webhook integration is working by going to the Try It tab and initiating a dialog that calls the webhook.</li>
+</ol>
+<p><img alt="webhook test" src="images/webhook-test.png" /></p>
+<p>You can easily use webhooks to give your Watson Assistant access to many external APIs and databases.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
