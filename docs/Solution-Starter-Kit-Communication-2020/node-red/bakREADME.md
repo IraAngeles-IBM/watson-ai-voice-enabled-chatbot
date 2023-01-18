@@ -37,7 +37,7 @@ Completing this tutorial should take about 30 minutes.
 
 The following diagram shows the workflow for a Node-RED chatbot that answers questions about COVID-19.
 
-![Crisis Comms Architecture diagram](/images/Crisis-Comms-Architecture-Node-RED.png)
+![Crisis Comms Architecture diagram](../images/Crisis-Comms-Architecture-Node-RED.png)
 
 1. A user visits a voice enabled Node-RED website with the COVID-19 chatbot and asks a question.
 2. Node-RED records the speech wav audio format and calls the Watson Speech to Text service hosted in IBM Cloud.

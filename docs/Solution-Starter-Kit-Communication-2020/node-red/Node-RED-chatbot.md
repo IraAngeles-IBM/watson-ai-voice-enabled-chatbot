@@ -38,7 +38,7 @@ Completing this tutorial should take about 30 minutes.
 
 The following diagram shows the workflow for a Node-RED chatbot that answers questions about COVID-19.
 
-![Crisis Comms Architecture diagram](../../images/Crisis-Comms-Architecture-Node-RED.png)
+![Crisis Comms Architecture diagram](../images/Crisis-Comms-Architecture-Node-RED.png)
 
 1. A user visits a voice enabled Node-RED website with the COVID-19 chatbot and asks a question.
 2. Node-RED records the speech wav audio format and calls the Watson Speech to Text service hosted in IBM Cloud.
@@ -119,7 +119,7 @@ Before the flow will execute successfully, you must configure the Watson Assista
 
 1. If you have created a [Watson Assistant service instance](https://cloud.ibm.com/catalog/services/watson-assistant). Kindly follow a), b), and c).
 
-   ![IBM Cloud Catalog Watson Assistant](../../starter-kit/assistant/WA-Photo1.png)
+   ![IBM Cloud Catalog Watson Assistant](../assistant/images/WA-Photo1.png)
 
    * a) Copy the Watson Assistant instance API key (a) and URL (b)
 
