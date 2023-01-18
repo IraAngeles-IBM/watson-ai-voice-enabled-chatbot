@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>COVID Crisis Communications Starter Kit - IBM Watson AI</title>
+    <title>COVID Crisis Communications Starter Kit - Voice Enabled Chatbot using Node-RED</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -31,7 +31,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> IBM Watson AI
+          <a href=".." class="icon icon-home"> Voice Enabled Chatbot using Node-RED
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -41,19 +41,15 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="assistant/ASSISTANT/">Step 1: Create ChatBot using Watson Assistant</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="assistant/ASSISTANT/">Watson Assistant</a>
+                <li class="toctree-l1"><a class="reference internal" href="webhook/">Step 2: Adding Webhooks to Watson Assistant using IBM Functions</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="webhook/">Adding Webhooks to Watson Assistant using IBM Functions</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="node-red/Node-RED-chatbot/">Use Case: Voice Enabled ChatBot using Node-RED</a>
+                <li class="toctree-l1"><a class="reference internal" href="node-red/Node-RED-chatbot/">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
                 </li>
               </ul>
       </div>
@@ -63,7 +59,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">IBM Watson AI</a>
+          <a href="..">Voice Enabled Chatbot using Node-RED</a>
         
       </nav>
       <div class="wy-nav-content">
@@ -81,15 +77,15 @@
               
                 <h1 id="covid-crisis-communications-starter-kit">COVID Crisis Communications Starter Kit</h1>
 <p>This solution starter was created by technologists from IBM.  Translations are available: <a href="/README_JP.md">JP</a></p>
-<h2 id="authors">Authors</h2>
-<ul>
-<li><a href="https://developer.ibm.com/profiles/dkbyron/">Donna Byron</a> - IBM</li>
-<li><a href="https://developer.ibm.com/profiles/walicki/">John Walicki</a> - IBM</li>
-<li><a href="https://developer.ibm.com/profiles/pricem/">Matt Price</a> - IBM</li>
-<li><a href="https://developer.ibm.com/profiles/mofizur.rahman">Mofizur Rahman</a> - IBM</li>
-<li><a href="https://developer.ibm.com/profiles/pmistry/">Pooja Mistry</a> - IBM</li>
-<li><a href="https://developer.ibm.com/profiles/ulidder/">Upkar Lidder</a> - IBM</li>
-</ul>
+<!-- ## Authors
+
+- [Donna Byron](https://developer.ibm.com/profiles/dkbyron/) - IBM
+- [John Walicki](https://developer.ibm.com/profiles/walicki/) - IBM
+- [Matt Price](https://developer.ibm.com/profiles/pricem/) - IBM
+- [Mofizur Rahman](https://developer.ibm.com/profiles/mofizur.rahman) - IBM
+- [Pooja Mistry](https://developer.ibm.com/profiles/pmistry/) - IBM
+- [Upkar Lidder](https://developer.ibm.com/profiles/ulidder/) - IBM -->
+
 <h2 id="contents">Contents</h2>
 <ol>
 <li><a href="#overview">Overview</a></li>
@@ -224,7 +220,7 @@
   <img alt="Watson Assistant Photo3 " src="/starter-kit/assistant/WA-Photo3.png" /></p>
 <p><strong>Step 5.</strong> Click <strong>Add Dialog skill</strong> to add this to your assistant. Follow <a href="https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add">the documentation</a> if you have questions.
   <img alt="Watson Assistant Photo4 " src="/starter-kit/assistant/WA-Photo4.png" /></p>
-<p><strong>Step 6.</strong> Click <strong>Import skill &gt; Choose JSON file</strong> and import the <a href="starter-kit/assistant/skill-CDC-COVID-FAQ.json"><code>skill-CDC-COVID-FAQ.json</code></a> file.
+<p><strong>Step 6.</strong> Click <strong>Import skill &gt; Choose JSON file</strong> and import the <a href="./starter-kit/assistant/skill-CDC-COVID-FAQ.json"><code>skill-CDC-COVID-FAQ.json</code></a> file.
   <img alt="Watson Assistant Photo5 " src="/starter-kit/assistant/WA-Photo5.png" /></p>
 <p><strong>Step 7.</strong> Go back to the All Assistants page. From the action menu ( <strong><code>⋮</code></strong> ), open <strong>Settings</strong>.
   <img alt="Watson Assistant Photo6 " src="/starter-kit/assistant/WA-Photo6.png" /></p>

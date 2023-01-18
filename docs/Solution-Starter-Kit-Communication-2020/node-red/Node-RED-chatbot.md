@@ -1,4 +1,4 @@
-# CHAPTER 2: Create a voice-enabled COVID-19 chatbot using Node-RED
+# STEP 3: Create a voice-enabled COVID-19 chatbot using Node-RED
 
 Learn how to create a voice-enabled chatbot using Node-RED and the IBM Watson Assistant, Watson Speech to Text, and Watson Text to Speech services.
 

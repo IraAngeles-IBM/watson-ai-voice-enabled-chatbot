@@ -1,10 +1,10 @@
-# CHAPTER 1: Create a crisis communication chatbot and connect it to news and COVID-19 data sources
+# STEP 1: Create a crisis communication chatbot and connect it to news and COVID-19 data sources
 
 In times of crisis, chatbots can help people quickly find answers they need to critical questions. In the case of a pandemic like COVID-19, people might be trying to find basic information about testing, symptoms, community response, and other resources.
 
-## Video
+<!-- ## Video
 
-[![Create a crisis communication chatbot and connect it to news and COVID-19 data sources ](https://img.youtube.com/vi/2bDFYYMqv_g/hqdefault.jpg)](https://youtu.be/2bDFYYMqv_g)
+[![Create a crisis communication chatbot and connect it to news and COVID-19 data sources ](https://img.youtube.com/vi/2bDFYYMqv_g/hqdefault.jpg)](https://youtu.be/2bDFYYMqv_g) -->
 
 This tutorial shows you how to create a crisis communication chatbot using IBM® Watson™ Assistant and how to add webhooks to Watson Assistant to query for dynamic data using Watson Discovery and COVID-19 APIs.
 
@@ -242,8 +242,8 @@ You can easily use webhooks to give your Watson Assistant access to many externa
 
 Now that you know how to create a COVID-19 chatbot and connect it to Watson Discovery and the COVID-19 API, there are a few different integration paths you can take. The following tutorials show you how to integrate this chatbot with Slack, with a simple web application, or with a Node-RED dashboard.
 
-- [Embed your COVID-19 chatbot on a website](https://developer.ibm.com/tutorials/tutorials/create-a-covid-19-chatbot-embedded-on-a-website/)
-- [Integrate your COVID-19 chatbot with Slack](https://developer.ibm.com/tutorials/create-crisis-communication-chatbot-integrate-slack/)
+<!-- - [Embed your COVID-19 chatbot on a website](https://developer.ibm.com/tutorials/tutorials/create-a-covid-19-chatbot-embedded-on-a-website/)
+- [Integrate your COVID-19 chatbot with Slack](https://developer.ibm.com/tutorials/create-crisis-communication-chatbot-integrate-slack/) -->
 - [Integrate your COVID-19 chatbot with Node-RED to enable voice commands](https://developer.ibm.com/tutorials/create-a-voice-enabled-covid-19-chatbot-using-node-red/)
 
 ## Congratulations on building your first Chatbot with Watson Assistant!

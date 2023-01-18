@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Adding Webhooks to Watson Assistant using IBM Functions - IBM Watson AI</title>
+    <title>Step 2: Adding Webhooks to Watson Assistant using IBM Functions - Voice Enabled Chatbot using Node-RED</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Adding Webhooks to Watson Assistant using IBM Functions";
+        var mkdocs_page_name = "Step 2: Adding Webhooks to Watson Assistant using IBM Functions";
         var mkdocs_page_input_path = "Solution-Starter-Kit-Communication-2020/webhook/README.md";
         var mkdocs_page_url = null;
       </script>
@@ -31,7 +31,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> IBM Watson AI
+          <a href="../.." class="icon icon-home"> Voice Enabled Chatbot using Node-RED
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -41,20 +41,14 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../assistant/ASSISTANT/">Watson Assistant</a>
+                <li class="toctree-l1"><a class="reference internal" href="../assistant/ASSISTANT/">Step 1: Create ChatBot using Watson Assistant</a>
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Adding Webhooks to Watson Assistant using IBM Functions</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Step 2: Adding Webhooks to Watson Assistant using IBM Functions</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#make-use-of-discovery-to-get-news-information">Make use of Discovery to get news information</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#get-a-weather-company-api-key">Get a Weather Company API Key</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#creating-cloud-functions">Creating Cloud Functions</a>
@@ -67,7 +61,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../node-red/Node-RED-chatbot/">Use Case: Voice Enabled ChatBot using Node-RED</a>
+                <li class="toctree-l1"><a class="reference internal" href="../node-red/Node-RED-chatbot/">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
                 </li>
               </ul>
       </div>
@@ -77,13 +71,13 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">IBM Watson AI</a>
+          <a href="../..">Voice Enabled Chatbot using Node-RED</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Adding Webhooks to Watson Assistant using IBM Functions</li>
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Step 2: Adding Webhooks to Watson Assistant using IBM Functions</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -93,10 +87,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="adding-webhooks-to-watson-assistant">Adding Webhooks to Watson Assistant</h1>
+                <h1 id="step-2-adding-webhooks-to-watson-assistant">STEP 2: Adding Webhooks to Watson Assistant</h1>
 <p>You can query for dynamic data using webhooks in IBM Watson Assistant. Our crisis communication chatbot uses two different sources:</p>
+<!-- - [Watson Discovery](https://www.ibm.com/cloud/watson-discovery) -->
 <ul>
-<li><a href="https://www.ibm.com/cloud/watson-discovery">Watson Discovery</a></li>
 <li><a href="https://covid19api.com/">COVID-19 API</a></li>
 <li><a href="https://weather.com/coronavirus">Weather Company Data</a></li>
 </ul>
@@ -106,27 +100,28 @@
 <li>Create a Watson Assistant COVID-19 crisis communications chatbot. <a href="/README.md#getting-started">Follow these instructions</a></li>
 <li>Create a <a href="https://callforcode.weather.com/register/">Weather Company API Account</a></li>
 </ul>
-<h3 id="make-use-of-discovery-to-get-news-information">Make use of Discovery to get news information</h3>
-<ol>
-<li>From your IBM Cloud account, go to Watson Discovery.</li>
-</ol>
-<p><img alt="Discover Service" src="images/discovery-service.png" /></p>
-<ol>
-<li>Create a new lite service.</li>
-</ol>
-<p><img alt="Create Discover Service" src="images/create-discovery-service.png" /></p>
-<ol>
-<li>Make note of the API key and the URL. You need that in the next steps.</li>
-</ol>
-<p><img alt="Credentials" src="images/discovery-credentials.png" /></p>
-<ol>
-<li>Open the Watson Discovery NEWS service, which is a prepopulated discovery dataset updated and maintained by the Watson Discovery team. </li>
-</ol>
-<p><img alt="Watson Discovery NEWS" src="images/watson-discovery-news.png" /></p>
-<ol>
-<li>From the top right corner, open the API tab. Make note of the Collection ID and Environment ID.</li>
-</ol>
-<p><img alt="NEWS Api info" src="images/news-api-info.png" /></p>
+<!-- ### Make use of Discovery to get news information
+
+1. From your IBM Cloud account, go to Watson Discovery.
+
+![Discover Service](./images/discovery-service.png)
+
+2. Create a new lite service.
+
+![Create Discover Service](./images/create-discovery-service.png)
+
+3. Make note of the API key and the URL. You need that in the next steps.
+
+![Credentials](./images/discovery-credentials.png)
+
+4. Open the Watson Discovery NEWS service, which is a prepopulated discovery dataset updated and maintained by the Watson Discovery team. 
+
+![Watson Discovery NEWS](./images/watson-discovery-news.png)
+
+5. From the top right corner, open the API tab. Make note of the Collection ID and Environment ID.
+
+![NEWS Api info](./images/news-api-info.png) -->
+
 <h3 id="get-a-weather-company-api-key">Get a Weather Company API Key</h3>
 <ol>
 <li>
@@ -199,17 +194,15 @@
   &quot;result&quot;: &quot;Total Cases: 65778\nTotal Deaths: 942\nTotal Recovered: 361\n\nSource: Johns Hopkins CSSE&quot;
 }
 </code></pre>
-<ol>
-<li>If you want to make a call to the Discovery service, you need to set some parameters that let you call the IAM-enabled service. On the left, click on the <strong>Parameters</strong> tab. Add the following parameters: <ul>
-<li><code>api_key</code> (Discovery API Key)</li>
-<li><code>twcApiKey</code> (API key from The Weather Company)</li>
-<li><code>url</code> (Discovery Service URL)</li>
-<li><code>collection_id</code></li>
-<li><code>env_id</code></li>
-</ul>
-</li>
-</ol>
-<p><img alt="parameters" src="images/parameter.png" /></p>
+<!-- 8. If you want to make a call to the Discovery service, you need to set some parameters that let you call the IAM-enabled service. On the left, click on the **Parameters** tab. Add the following parameters: 
+    - `api_key` (Discovery API Key)
+    - `twcApiKey` (API key from The Weather Company)
+    - `url` (Discovery Service URL)
+    - `collection_id`
+    - `env_id`
+
+![parameters](./images/parameter.png) -->
+
 <ol>
 <li>Enable the action as a web action. To do so, select the <strong>Endpoints</strong> tab on the left. Click the checkbox beside "Enable as Web Action."</li>
 </ol>
@@ -266,8 +259,8 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../assistant/ASSISTANT/" class="btn btn-neutral float-left" title="Watson Assistant"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../node-red/Node-RED-chatbot/" class="btn btn-neutral float-right" title="Use Case: Voice Enabled ChatBot using Node-RED">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../assistant/ASSISTANT/" class="btn btn-neutral float-left" title="Step 1: Create ChatBot using Watson Assistant"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../node-red/Node-RED-chatbot/" class="btn btn-neutral float-right" title="Step 3: Create Voice Enabled ChatBot using Node-RED">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>

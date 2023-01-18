@@ -1,8 +1,8 @@
-site_name: IBM Watson AI
+site_name: Voice Enabled Chatbot using Node-RED
 theme:
     name: readthedocs
 nav:
-    - Home: 'index.md'
-    - 'Watson Assistant': './Solution-Starter-Kit-Communication-2020/assistant/ASSISTANT.md'
-    - 'Adding Webhooks to Watson Assistant using IBM Functions' : 'Solution-Starter-Kit-Communication-2020/webhook/README.md'
-    - 'Use Case: Voice Enabled ChatBot using Node-RED': 'Solution-Starter-Kit-Communication-2020/node-red/Node-RED-chatbot.md'
+    # - Home: 'index.md'
+    - 'Step 1: Create ChatBot using Watson Assistant': './Solution-Starter-Kit-Communication-2020/assistant/ASSISTANT.md'
+    - 'Step 2: Adding Webhooks to Watson Assistant using IBM Functions' : 'Solution-Starter-Kit-Communication-2020/webhook/README.md'
+    - 'Step 3: Create Voice Enabled ChatBot using Node-RED': 'Solution-Starter-Kit-Communication-2020/node-red/Node-RED-chatbot.md'
