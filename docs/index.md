@@ -1,7 +1,7 @@
 # Voice Enabled Chatbot using Node-RED
 
 !!! warning 
-    This is material is part of the World Wide IBM Call for Code 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
+    This material is part of the World Wide IBM Call for Code 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
 
 
 ![Node RED](./Solution-Starter-Kit-Communication-2020/node-red/images/Node-RED-COVIDChatBot-flow.png)

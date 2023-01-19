@@ -1,7 +1,7 @@
 # STEP 2: Adding Webhooks to Watson Assistant
 
 !!! warning 
-    This is material is part of the World Wide IBM Call for Code 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
+    This material is part of the World Wide IBM Call for Code 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
   
 
 ## Defining webhooks

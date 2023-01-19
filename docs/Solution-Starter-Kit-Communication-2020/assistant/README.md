@@ -1,7 +1,7 @@
 # STEP 1: Create a crisis communication chatbot and connect it to news and COVID-19 data sources
 
 !!! warning 
-    This is material is part of the World Wide IBM Call for Code 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
+    This material is part of the World Wide IBM Call for Code 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
 
 
 In times of crisis, chatbots can help people quickly find answers they need to critical questions. In the case of a pandemic like COVID-19, people might be trying to find basic information about testing, symptoms, community response, and other resources.

@@ -1,7 +1,7 @@
 # COVID Crisis Communications Starter Kit
 
 > **Warning**
->This is material is part of the World Wide IBM Call for Code in 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
+>This material is part of the World Wide IBM Call for Code 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
 
 
 This solution starter was created by technologists from IBM.  
