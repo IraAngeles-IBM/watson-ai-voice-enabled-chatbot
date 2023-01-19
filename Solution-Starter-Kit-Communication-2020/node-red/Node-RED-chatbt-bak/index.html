@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Step 3: Create Voice Enabled ChatBot using Node-RED - Voice Enabled Chatbot using Node-RED</title>
+    <title>STEP 3: Create a voice-enabled COVID-19 chatbot using Node-RED - Voice Enabled Chatbot using Node-RED</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Step 3: Create Voice Enabled ChatBot using Node-RED";
-        var mkdocs_page_input_path = "Solution-Starter-Kit-Communication-2020/node-red/Node-RED-chatbot.md";
+        var mkdocs_page_name = "STEP 3: Create a voice-enabled COVID-19 chatbot using Node-RED";
+        var mkdocs_page_input_path = "Solution-Starter-Kit-Communication-2020/node-red/Node-RED-chatbt-bak.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -41,75 +41,15 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../assistant/ASSISTANT/">Step 1: Create ChatBot using Watson Assistant</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../assistant/">Step 1: Create ChatBot using Watson Assistant</a>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../../webhook/">Step 2: Adding Webhooks to Watson Assistant using IBM Functions</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#authors">Authors</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#learning-objectives">Learning objectives</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#estimated-time">Estimated time</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#architecture-diagram">Architecture diagram</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#voice-enabled-covid-crisis-communications-chatbot-using-node-red">Voice enabled COVID Crisis Communications Chatbot using Node-RED</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#learn-about-node-red">Learn about Node-RED</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#install-node-red-dependencies-nodes">Install Node-RED Dependencies nodes</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#local-installation-instructions">Local installation instructions</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ibm-cloud-installation-instructions">IBM Cloud installation instructions</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#explore-node-red-node-watson-node-red-nodes">Explore node-red-node-watson Node-RED nodes</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#import-and-deploy-the-covid-19-crisis-communication-chatbot-example">Import and deploy the COVID-19 crisis communication chatbot example</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#create-watson-services-on-ibm-cloud">Create Watson Services on IBM Cloud</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#create-a-watson-assistant-instance">Create a Watson Assistant instance</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#create-a-watson-speech-to-text-service-instance">Create a Watson Speech to Text service instance</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#create-a-watson-text-to-speech-service-instance">Create a Watson Text to Speech service instance</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#enable-watson-speech-nodes-with-api-keys">Enable Watson Speech Nodes with API keys</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#enable-watson-assistant-node-with-the-covid-19-workspace-id-and-api-key">Enable Watson Assistant node with the COVID-19 Workspace ID and API key</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#parse-intents-and-invoke-api-calls">Parse intents and invoke API calls</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#deploy-the-node-red-flows">Deploy the Node-RED flows</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#talk-to-your-covid-19-crisis-chatbot">Talk to your COVID-19 crisis chatbot</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#build-a-node-red-covid-statistics-dashboard">Build a Node-RED COVID statistics dashboard</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#learn-more-about-the-dashboard-code">Learn more about the dashboard code</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#congratulations-on-building-a-call-for-code-crisis-communication-solution">Congratulations on building a Call for Code Crisis Communication solution!</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
                 </li>
               </ul>
       </div>
@@ -125,7 +65,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Step 3: Create Voice Enabled ChatBot using Node-RED</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>STEP 3: Create a voice-enabled COVID-19 chatbot using Node-RED</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -158,7 +98,8 @@
 <ul>
 <li>After Node-RED is installed, add the dependencies:</li>
 </ul>
-<p><code>npm install node-red-node-ui-microphone node-red-dashboard node-red-node-watson node-red-contrib-play-audio</code>
+<p><div class="highlight"><pre><span></span><code>npm install node-red-node-ui-microphone node-red-dashboard node-red-node-watson node-red-contrib-play-audio
+</code></pre></div>
  - <a href="/README.md#getting-started">Create a Watson Assistant COVID-19 crisis communications chatbot</a>.</p>
 </li>
 </ul>
@@ -197,16 +138,16 @@
 <li><a href="https://flows.nodered.org/node/node-red-contrib-play-audio">node-red-contrib-play-audio</a></li>
 </ul>
 <h4 id="local-installation-instructions">Local installation instructions</h4>
-<pre><code>npm install node-red-node-ui-microphone node-red-dashboard node-red-node-watson node-red-contrib-play-audio
-</code></pre>
+<div class="highlight"><pre><span></span><code>npm install node-red-node-ui-microphone node-red-dashboard node-red-node-watson node-red-contrib-play-audio
+</code></pre></div>
 <h4 id="ibm-cloud-installation-instructions">IBM Cloud installation instructions</h4>
 <ul>
 <li>Instead of adding the additional packages via <strong>Manage Palette</strong>, use the IBM Cloud Toolchain and the git repository in IBM Cloud to add the following packages to the package.json. Commit the change and the CI/CD toolchain will restage the CF application.</li>
 </ul>
-<pre><code>&quot;node-red-node-ui-microphone&quot;:&quot;0.x&quot;,
+<div class="highlight"><pre><span></span><code>&quot;node-red-node-ui-microphone&quot;:&quot;0.x&quot;,
 &quot;node-red-dashboard&quot;:&quot;2.x&quot;,
 &quot;node-red-contrib-play-audio&quot;:&quot;2.x&quot;,
-</code></pre>
+</code></pre></div>
 <h3 id="explore-node-red-node-watson-node-red-nodes">Explore node-red-node-watson Node-RED nodes</h3>
 <p>The <a href="https://github.com/watson-developer-cloud/node-red-node-watson">node-red-node-watson GitHub repository</a> includes a collection of Node-RED nodes for IBM Watson services.  This package adds the following nodes to your Node-RED palette:</p>
 <ul>
@@ -331,29 +272,26 @@
 <p><img alt="Node-RED COVID Data Dashboard" src="../images/Node-RED-COVID-Dashboard-flow.png" /></p>
 <p>The <code>http request</code> node uses the <a href="https://api.covid19api.com/summary">public Covid-19 API</a> to retrieve the daily information for all countries with infections.</p>
 <p>Here's the sample JSON object from the summary API:</p>
-<pre><code class="language-json">{&quot;Country&quot;:&quot;US&quot;,&quot;Slug&quot;:&quot;us&quot;,&quot;NewConfirmed&quot;:18058,&quot;TotalConfirmed&quot;:83836,&quot;NewDeaths&quot;:267,&quot;TotalDeaths&quot;:1209,&quot;NewRecovered&quot;:320,&quot;TotalRecovered&quot;:681},
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;Country&quot;</span><span class="p">:</span><span class="s2">&quot;US&quot;</span><span class="p">,</span><span class="nt">&quot;Slug&quot;</span><span class="p">:</span><span class="s2">&quot;us&quot;</span><span class="p">,</span><span class="nt">&quot;NewConfirmed&quot;</span><span class="p">:</span><span class="mi">18058</span><span class="p">,</span><span class="nt">&quot;TotalConfirmed&quot;</span><span class="p">:</span><span class="mi">83836</span><span class="p">,</span><span class="nt">&quot;NewDeaths&quot;</span><span class="p">:</span><span class="mi">267</span><span class="p">,</span><span class="nt">&quot;TotalDeaths&quot;</span><span class="p">:</span><span class="mi">1209</span><span class="p">,</span><span class="nt">&quot;NewRecovered&quot;</span><span class="p">:</span><span class="mi">320</span><span class="p">,</span><span class="nt">&quot;TotalRecovered&quot;</span><span class="p">:</span><span class="mi">681</span><span class="p">},</span><span class="w"></span>
+</code></pre></div>
 <p>Each <code>function</code> node then aggregates the Total Confirmed Cases, Total Fatalities, Total Recovered, and Total Countries and sends the results to the corresponding <code>gauge</code> node.</p>
 <p>This is the code in the <code>function</code> node:</p>
-<pre><code class="language-javascript">let totalConfirmedCase = 0;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">totalConfirmedCase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
 
-msg.payload.Countries.map(function(line){
-    totalConfirmedCase += line.TotalConfirmed;
-});
+<span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">Countries</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">line</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">totalConfirmedCase</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">line</span><span class="p">.</span><span class="nx">TotalConfirmed</span><span class="p">;</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-msg.payload = totalConfirmedCase;
+<span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">totalConfirmedCase</span><span class="p">;</span><span class="w"></span>
 
-return msg;
-</code></pre>
+<span class="k">return</span><span class="w"> </span><span class="nx">msg</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
 <p>You can expand the above dashboard to include daily new infections from <a href="https://api.covid19api.com/summary">covid19api</a> data, charts, tables, and the chatbot UI.</p>
 <h2 id="congratulations-on-building-a-call-for-code-crisis-communication-solution">Congratulations on building a Call for Code Crisis Communication solution!</h2>
 <p>Awesome! You have now completed the tutorial on building a chatbot with Node-RED on IBM Cloud! Feel free to modify and enhance your solutions with other services on IBM Cloud. We are looking forward to your exciting solutions!</p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../webhook/" class="btn btn-neutral float-left" title="Step 2: Adding Webhooks to Watson Assistant using IBM Functions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
 
   <hr/>
 
@@ -374,8 +312,6 @@ return msg;
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
-    
-      <span><a href="../../webhook/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>
