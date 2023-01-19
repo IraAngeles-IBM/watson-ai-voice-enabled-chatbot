@@ -1,7 +1,8 @@
 # STEP 2: Adding Webhooks to Watson Assistant
 
 !!! warning 
-    This is material is part of the World Wide IBM Call for Code in 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
+    This is material is part of the World Wide IBM Call for Code 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
+  
 
 ## Defining webhooks
 
@@ -17,7 +18,7 @@ You can query for dynamic data using webhooks in IBM Watson Assistant. Our crisi
 
 ## Prerequisites
 - Create an [IBM Cloud Account](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917).
-- Create a Watson Assistant COVID-19 crisis communications chatbot. [Follow these instructions](/README.md#getting-started)
+- Create a Watson Assistant COVID-19 crisis communications chatbot. [Follow these instructions](../assistant/README.md)
 <!-- - Create a [Weather Company API Account](https://callforcode.weather.com/register/) -->
 
 <!-- ### Make use of Discovery to get news information

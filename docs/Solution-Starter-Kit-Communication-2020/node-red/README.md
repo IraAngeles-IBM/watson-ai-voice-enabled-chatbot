@@ -1,7 +1,7 @@
 # STEP 3: Create a voice-enabled COVID-19 chatbot using Node-RED
 
 !!! warning 
-    This is material is part of the World Wide IBM Call for Code in 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
+    This is material is part of the World Wide IBM Call for Code 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
 
 Learn how to create a voice-enabled chatbot using Node-RED and the IBM Watson Assistant, Watson Speech to Text, and Watson Text to Speech services.
 
