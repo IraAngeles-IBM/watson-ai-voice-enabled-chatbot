@@ -54,7 +54,7 @@ We show you how to create a chatbot using Watson Assistant, a tool that enables 
   
   ![Watson Assistant Photo4 ](images/WA-Photo4.png)
 
-**Step 6.** Click **Import skill > Choose JSON file** and import the [`skill-CDC-COVID-FAQ.json`](./assistant/skill-CDC-COVID-FAQ.json) file.
+**Step 6.** Click **Import skill > Choose JSON file** and import the [`skill-CDC-COVID-FAQ.json`](./skill-CDC-COVID-FAQ.json) file.
   
   ![Watson Assistant Photo5 ](images/WA-Photo5.png)
 

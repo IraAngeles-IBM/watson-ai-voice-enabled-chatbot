@@ -41,16 +41,16 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../assistant/ASSISTANT/">Step 1: Create ChatBot using Watson Assistant</a>
+                <li class="toctree-l1"><a class="reference internal" href="../assistant/">Step 1: Create ChatBot using Watson Assistant</a>
                 </li>
               </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Step 2: Adding Webhooks to Watson Assistant using IBM Functions</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#defining-webhooks">Defining webhooks</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#get-a-weather-company-api-key">Get a Weather Company API Key</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#creating-cloud-functions">Creating Cloud Functions</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#integrate-data-sources-via-a-watson-assistant-webhook">Integrate data sources via a Watson Assistant webhook</a>
@@ -61,7 +61,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../node-red/Node-RED-chatbot/">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
+                <li class="toctree-l1"><a class="reference internal" href="../node-red/">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
                 </li>
               </ul>
       </div>
@@ -88,18 +88,27 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="step-2-adding-webhooks-to-watson-assistant">STEP 2: Adding Webhooks to Watson Assistant</h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is material is part of the World Wide IBM Call for Code in 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.</p>
+</div>
+<h2 id="defining-webhooks">Defining webhooks</h2>
+<p>A webhook is a mechanism that allows you to call out to an external program based on something happening in your program. When used in a dialog skill, a webhook is triggered when the assistant processes a node that has a webhook enabled. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables. </p>
+<p>It sends the data as part of a HTTP POST request to the URL that you specify as part of your webhook definition. The URL that receives the webhook is the listener. It performs a predefined action using the information that you pass to it as specified in the webhook definition, and can optionally return a response.</p>
 <p>You can query for dynamic data using webhooks in IBM Watson Assistant. Our crisis communication chatbot uses two different sources:</p>
 <!-- - [Watson Discovery](https://www.ibm.com/cloud/watson-discovery) -->
 <ul>
 <li><a href="https://covid19api.com/">COVID-19 API</a></li>
-<li><a href="https://weather.com/coronavirus">Weather Company Data</a></li>
 </ul>
+<!-- - [Weather Company Data](https://weather.com/coronavirus) -->
+
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Create an <a href="https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&amp;eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&amp;cm_mmca1=000039JL&amp;cm_mmca2=10008917">IBM Cloud Account</a>.</li>
 <li>Create a Watson Assistant COVID-19 crisis communications chatbot. <a href="/README.md#getting-started">Follow these instructions</a></li>
-<li>Create a <a href="https://callforcode.weather.com/register/">Weather Company API Account</a></li>
 </ul>
+<!-- - Create a [Weather Company API Account](https://callforcode.weather.com/register/) -->
+
 <!-- ### Make use of Discovery to get news information
 
 1. From your IBM Cloud account, go to Watson Discovery.
@@ -122,18 +131,14 @@
 
 ![NEWS Api info](./images/news-api-info.png) -->
 
-<h3 id="get-a-weather-company-api-key">Get a Weather Company API Key</h3>
-<ol>
-<li>
-<p>Go to <a href="https://callforcode.weather.com/register/">https://callforcode.weather.com/register/</a></p>
-</li>
-<li>
-<p>Signup with your info. Your API key will be emailed to you.</p>
-</li>
-<li>
-<p>Save the API key for future use.</p>
-</li>
-</ol>
+<!-- ### Get a Weather Company API Key
+
+1. Go to [https://callforcode.weather.com/register/](https://callforcode.weather.com/register/)
+
+2. Signup with your info. Your API key will be emailed to you.
+
+3. Save the API key for future use. -->
+
 <h3 id="creating-cloud-functions">Creating Cloud Functions</h3>
 <ol>
 <li>
@@ -149,7 +154,7 @@
 </ol>
 <p><img alt="create" src="images/create-action.png" /></p>
 <ol>
-<li>Name your action. For the Runtime dropdown, select <strong>Node.js 10</strong>.</li>
+<li>Name your action. For the Runtime dropdown, select <strong>Node.js 16</strong> or latest.</li>
 </ol>
 <p><img alt="environment" src="images/create-action-env.png" /></p>
 <ol>
@@ -160,7 +165,7 @@
 <li>Our code has two main parts. We decide whether to call the COVID-19 API or Watson Discovery based on a parameter sent on the function call. If a query param of <code>type=api</code> is set, you call the COVID-19 API on the <a href="https://api.covid19api.com/summary">summary endpoint</a>. </li>
 </ol>
 <p>It returns the data in the following format:</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   Countries: [
     {
       Country: &quot;&quot;,
@@ -185,15 +190,15 @@
     ...
   ]
 }
-</code></pre>
+</code></pre></div>
 <ol>
 <li>If there is specific location (Country/Country Code/US State) selected, you look for that location either using The Weather Company API or in the summary response and return the status for that location.</li>
 </ol>
 <p>For example, the response for <code>type=api</code> and <code>location=United States of America</code> is shown below.</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   &quot;result&quot;: &quot;Total Cases: 65778\nTotal Deaths: 942\nTotal Recovered: 361\n\nSource: Johns Hopkins CSSE&quot;
 }
-</code></pre>
+</code></pre></div>
 <!-- 8. If you want to make a call to the Discovery service, you need to set some parameters that let you call the IAM-enabled service. On the left, click on the **Parameters** tab. Add the following parameters: 
     - `api_key` (Discovery API Key)
     - `twcApiKey` (API key from The Weather Company)
@@ -259,8 +264,8 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../assistant/ASSISTANT/" class="btn btn-neutral float-left" title="Step 1: Create ChatBot using Watson Assistant"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../node-red/Node-RED-chatbot/" class="btn btn-neutral float-right" title="Step 3: Create Voice Enabled ChatBot using Node-RED">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../assistant/" class="btn btn-neutral float-left" title="Step 1: Create ChatBot using Watson Assistant"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../node-red/" class="btn btn-neutral float-right" title="Step 3: Create Voice Enabled ChatBot using Node-RED">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -283,10 +288,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../assistant/ASSISTANT/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../assistant/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../node-red/Node-RED-chatbot/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../node-red/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

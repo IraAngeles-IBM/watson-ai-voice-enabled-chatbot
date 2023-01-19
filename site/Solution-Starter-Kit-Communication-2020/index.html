@@ -41,7 +41,7 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="assistant/ASSISTANT/">Step 1: Create ChatBot using Watson Assistant</a>
+                <li class="toctree-l1"><a class="reference internal" href="assistant/">Step 1: Create ChatBot using Watson Assistant</a>
                 </li>
               </ul>
               <ul>
@@ -49,7 +49,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="node-red/Node-RED-chatbot/">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
+                <li class="toctree-l1"><a class="reference internal" href="node-red/">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
                 </li>
               </ul>
       </div>
@@ -76,8 +76,14 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="covid-crisis-communications-starter-kit">COVID Crisis Communications Starter Kit</h1>
-<p>This solution starter was created by technologists from IBM.  Translations are available: <a href="/README_JP.md">JP</a></p>
-<!-- ## Authors
+<blockquote>
+<p><strong>Warning</strong>
+This is material is part of the World Wide IBM Call for Code in 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.</p>
+</blockquote>
+<p>This solution starter was created by technologists from IBM.  </p>
+<!-- Translations are available: [JP](/README_JP.md) -->
+
+<!-- ## Authors -- the team
 
 - [Donna Byron](https://developer.ibm.com/profiles/dkbyron/) - IBM
 - [John Walicki](https://developer.ibm.com/profiles/walicki/) - IBM
@@ -120,7 +126,7 @@
 <h2 id="how-it-works">How it works</h2>
 <h2 id="diagrams">Diagrams</h2>
 <h3 id="website-integration-with-covid-19-crisis-communication-chatbot">Website integration with COVID-19 crisis communication chatbot</h3>
-<p><img alt="Crisis Comms Architecture diagram" src="/images/Crisis-Comms-Architecture-Nodejs-WebServer.png" /></p>
+<p><img alt="Crisis Comms Architecture diagram" src="images/Crisis-Comms-Architecture-Nodejs-WebServer.png" /></p>
 <ol>
 <li>User visits a website with the COVID-19 chatbot and asks a question.</li>
 <li>Node.js web server calls the Watson Assistant service hosted in IBM Cloud.</li>
@@ -135,7 +141,7 @@
 <li>Node.js web server displays the chat answer to the user.</li>
 </ol>
 <h3 id="slack-integration-with-covid-19-crisis-communication-chatbot">Slack integration with COVID-19 crisis communication chatbot</h3>
-<p><img alt="Crisis Comms Architecture diagram" src="/images/Crisis-Comms-Architecture-Slack-Integration.png" /></p>
+<p><img alt="Crisis Comms Architecture diagram" src="images/Crisis-Comms-Architecture-Slack-Integration.png" /></p>
 <ol>
 <li>User invokes a COVID-19 Slack integration chatbot app and asks a question.</li>
 <li>Slack app calls the Watson Assistant service hosted in IBM Cloud.</li>
@@ -150,7 +156,7 @@
 <li>Slack app displays the chat answer to the user.</li>
 </ol>
 <h3 id="voice-enabled-covid-19-crisis-communication-chatbot-using-node-red">Voice enabled COVID-19 crisis communication chatbot using Node-RED</h3>
-<p><img alt="Crisis Comms Architecture diagram" src="/images/Crisis-Comms-Architecture-Node-RED.png" /></p>
+<p><img alt="Crisis Comms Architecture diagram" src="images/Crisis-Comms-Architecture-Node-RED.png" /></p>
 <ol>
 <li>User visits a voice-enabled Node-RED website with the COVID-19 chatbot and asks a question.</li>
 <li>Node-RED records the speech wav file and calls the Watson Speech to Text service hosted in IBM Cloud.</li>
@@ -212,28 +218,28 @@
 <h3 id="set-up-an-instance-of-watson-assistant">Set up an instance of Watson Assistant</h3>
 <p>Log in to IBM Cloud and provision a Watson Assistant instance.</p>
 <p><strong>Step 1.</strong> From the <a href="https://cloud.ibm.com/catalog/services/watson-assistant">IBM Cloud catalog</a>, provision an an instance of <strong>Watson Assistant</strong>.
-  <img alt="Watson Assistant Catalog" src="/starter-kit/assistant/WA-Photo1.png" /></p>
+  <img alt="Watson Assistant Catalog" src="assistant/images/WA-Photo1.png" /></p>
 <p><strong>Step 2.</strong>  Launch the Watson Assistant service.</p>
 <p><strong>Step 3.</strong> Click <strong>Create assistant</strong> and follow <a href="https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add">these detailed instructions</a> for how to create an assistant.
-  <img alt="Watson Assistant Photo2 " src="/starter-kit/assistant/WA-Photo2.png" /></p>
+  <img alt="Watson Assistant Photo2 " src="assistant/images/WA-Photo2.png" /></p>
 <p><strong>Step 4.</strong> Name the Watson Assistant instance <strong>COVID Crisis Communication</strong>
-  <img alt="Watson Assistant Photo3 " src="/starter-kit/assistant/WA-Photo3.png" /></p>
+  <img alt="Watson Assistant Photo3 " src="assistant/images/WA-Photo3.png" /></p>
 <p><strong>Step 5.</strong> Click <strong>Add Dialog skill</strong> to add this to your assistant. Follow <a href="https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add">the documentation</a> if you have questions.
-  <img alt="Watson Assistant Photo4 " src="/starter-kit/assistant/WA-Photo4.png" /></p>
-<p><strong>Step 6.</strong> Click <strong>Import skill &gt; Choose JSON file</strong> and import the <a href="./starter-kit/assistant/skill-CDC-COVID-FAQ.json"><code>skill-CDC-COVID-FAQ.json</code></a> file.
-  <img alt="Watson Assistant Photo5 " src="/starter-kit/assistant/WA-Photo5.png" /></p>
+  <img alt="Watson Assistant Photo4 " src="assistant/images/WA-Photo4.png" /></p>
+<p><strong>Step 6.</strong> Click <strong>Import skill &gt; Choose JSON file</strong> and import the <a href="assistant/skill-CDC-COVID-FAQ.json"><code>skill-CDC-COVID-FAQ.json</code></a> file.
+  <img alt="Watson Assistant Photo5 " src="assistant/images/WA-Photo5.png" /></p>
 <p><strong>Step 7.</strong> Go back to the All Assistants page. From the action menu ( <strong><code>⋮</code></strong> ), open <strong>Settings</strong>.
-  <img alt="Watson Assistant Photo6 " src="/starter-kit/assistant/WA-Photo6.png" /></p>
+  <img alt="Watson Assistant Photo6 " src="assistant/images/WA-Photo6.png" /></p>
 <p><strong>Step 8.</strong>  On the Settings tab, click <strong>API Details</strong> on the left and make a note of the <code>Assistant ID</code> and <code>Api Key</code> for future use.
-  <img alt="Watson Assistant Photo7 " src="/starter-kit/assistant/WA-Photo7.png" /></p>
+  <img alt="Watson Assistant Photo7 " src="assistant/images/WA-Photo7.png" /></p>
 <p><strong>Step 9.</strong> Go back to the All Assistants page and click on the <strong>Skills</strong> link.
-  <img alt="Watson Assistant Skills " src="/starter-kit/assistant/WA-Skills.png" /></p>
+  <img alt="Watson Assistant Skills " src="assistant/images/WA-Skills.png" /></p>
 <p><strong>Step 10.</strong> On the Skill page, click on the action menu ( <strong><code>⋮</code></strong> ), open <strong>View API Details</strong>.
-  <img alt="Watson Assistant Skill Properties" src="/starter-kit/assistant/WA-SkillAPIProperties.png" /></p>
+  <img alt="Watson Assistant Skill Properties" src="assistant/images/WA-SkillAPIProperties.png" /></p>
 <p><strong>Step 11.</strong> On the Skill Details page, make note of the <code>Skill ID</code> for future use.
-  <img alt="Watson Assistant Skill Details" src="/starter-kit/assistant/WA-SkillDetails.png" /></p>
+  <img alt="Watson Assistant Skill Details" src="assistant/images/WA-SkillDetails.png" /></p>
 <p><strong>Step 12.</strong>  Go back to your dialog skill and click on the <strong>Preview Link</strong> button on the side to get a link to test and verify your assistant.
-  <img alt="Watson Assistant Photo9 " src="/starter-kit/assistant/WA-Photo91.png" /></p>
+  <img alt="Watson Assistant Photo9 " src="assistant/images/WA-Photo91.png" /></p>
 <p><strong>Step 13.</strong> Ask the Watson Assistant chatbot some questions about COVID-19.</p>
 <p align="center">
 <img width="50%" height="50%" src="https://raw.githubusercontent.com/Call-for-Code/Solution-Starter-Kit-Communication-2020/master/starter-kit/assistant/WA-Photo101.png">
@@ -242,18 +248,18 @@
 <h3 id="connect-your-chatbot-to-data-sources-via-a-webhook">Connect your chatbot to data sources via a webhook</h3>
 <p>Now that you’ve created your Watson Assistant-enabled chatbot, you need to connect it to a data source. With Watson Assistant, you need to do this via a webhook.</p>
 <p>A webhook is a mechanism that allows you to call out to an external program based on something happening in your program. When used in a dialog skill, a webhook is triggered when the assistant processes a node that has a webhook enabled. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables. It sends the data as part of a HTTP POST request to the URL that you specify as part of your webhook definition. The URL that receives the webhook is the listener. It performs a predefined action using the information that you pass to it as specified in the webhook definition, and can optionally return a response.</p>
-<p><a href="./starter-kit/webhook/README.md">Follow these instructions for setting up webhook</a> with the Watson Assistant chatbot you just provisioned.</p>
+<p><a href="webhook/">Follow these instructions for setting up webhook</a> with the Watson Assistant chatbot you just provisioned.</p>
 <h3 id="integrate-your-covid-19-chatbot-with-slack">Integrate your COVID-19 chatbot with Slack</h3>
 <p>Now that you have a functioning Watson Assistant, let's deploy it to Slack. Slack is a cloud-based messaging application that helps people collaborate with one another. After you configure a dialog skill and add it to an assistant, you can integrate the assistant with Slack.</p>
 <p>When integrated, depending on the events that you configure the assistant to support, your assistant can respond to questions that are asked in direct messages or in channels where the assistant is directly mentioned.</p>
-<p><a href="/starter-kit/slack/README.md">Read these instructions</a> to learn how to integrate your COVID-19 chatbot with Slack.</p>
-<p><img alt="Slack Gif" src="/starter-kit/slack/readme_images/Slack.gif" /></p>
+<p><a href="https://github.com/IraAngeles-IBM/Solution-Starter-Kit-Communication-2020/blob/master/starter-kit/slack/README.md">Read these instructions</a> to learn how to integrate your COVID-19 chatbot with Slack.</p>
+<p><img alt="Slack Gif" src="https://raw.githubusercontent.com/IraAngeles-IBM/Solution-Starter-Kit-Communication-2020/master/starter-kit/slack/readme_images/Slack.gif" /></p>
 <h3 id="integrate-your-covid-19-chatbot-with-node-red">Integrate your COVID-19 chatbot with Node-RED</h3>
-<p>Want to create a voice-enabled chatbot? This tutorial teaches you how to <a href="./starter-kit/node-red/README.md">create a voice enabled chatbot using Node-RED</a> and the Watson Assistant, Watson Speech to Text, and Watson Text to Speech nodes.</p>
+<p>Want to create a voice-enabled chatbot? This tutorial teaches you how to <a href="node-red/">create a voice enabled chatbot using Node-RED</a> and the Watson Assistant, Watson Speech to Text, and Watson Text to Speech nodes.</p>
 <h3 id="embed-your-covid-19-chatbot-on-a-nodejs-website">Embed your COVID-19 chatbot on a Node.js website</h3>
 <p>Finally, you can embed your COVID-19 crisis communication chatbot on a Node.js website.</p>
 <ul>
-<li>Follow the <a href="./starter-kit/covid-simple/README.md">COVID-Simple installation instructions</a></li>
+<li>Follow the <a href="https://github.com/IraAngeles-IBM/Solution-Starter-Kit-Communication-2020/tree/master/starter-kit/covid-simple">COVID-Simple installation instructions</a></li>
 </ul>
 <h2 id="disclosures">Disclosures</h2>
 <p>This tool is intended to provide information based on currently available CDC and other public information to help you make decisions about seeking appropriate medical care. This system is not intended for the diagnosis or treatment of disease or other conditions, including COVID-19, and you should not provide any personally identifying or private health information.</p>
