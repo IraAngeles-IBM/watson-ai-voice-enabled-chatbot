@@ -1,15 +1,24 @@
 # STEP 2: Adding Webhooks to Watson Assistant
 
+!!! warning 
+    This is material is part of the World Wide IBM Call for Code in 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
+
+## Defining webhooks
+
+A webhook is a mechanism that allows you to call out to an external program based on something happening in your program. When used in a dialog skill, a webhook is triggered when the assistant processes a node that has a webhook enabled. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables. 
+
+It sends the data as part of a HTTP POST request to the URL that you specify as part of your webhook definition. The URL that receives the webhook is the listener. It performs a predefined action using the information that you pass to it as specified in the webhook definition, and can optionally return a response.
+
 You can query for dynamic data using webhooks in IBM Watson Assistant. Our crisis communication chatbot uses two different sources:
 
 <!-- - [Watson Discovery](https://www.ibm.com/cloud/watson-discovery) -->
 - [COVID-19 API](https://covid19api.com/)
-- [Weather Company Data](https://weather.com/coronavirus)
+<!-- - [Weather Company Data](https://weather.com/coronavirus) -->
 
 ## Prerequisites
 - Create an [IBM Cloud Account](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917).
 - Create a Watson Assistant COVID-19 crisis communications chatbot. [Follow these instructions](/README.md#getting-started)
-- Create a [Weather Company API Account](https://callforcode.weather.com/register/)
+<!-- - Create a [Weather Company API Account](https://callforcode.weather.com/register/) -->
 
 <!-- ### Make use of Discovery to get news information
 
@@ -33,13 +42,13 @@ You can query for dynamic data using webhooks in IBM Watson Assistant. Our crisi
 
 ![NEWS Api info](./images/news-api-info.png) -->
 
-### Get a Weather Company API Key
+<!-- ### Get a Weather Company API Key
 
 1. Go to [https://callforcode.weather.com/register/](https://callforcode.weather.com/register/)
 
 2. Signup with your info. Your API key will be emailed to you.
 
-3. Save the API key for future use.
+3. Save the API key for future use. -->
 
 ### Creating Cloud Functions
 
@@ -53,7 +62,7 @@ You can query for dynamic data using webhooks in IBM Watson Assistant. Our crisi
 
 ![create](./images/create-action.png)
 
-4. Name your action. For the Runtime dropdown, select **Node.js 10**.
+4. Name your action. For the Runtime dropdown, select **Node.js 16** or latest.
 
 ![environment](./images/create-action-env.png)
 

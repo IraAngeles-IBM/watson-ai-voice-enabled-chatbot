@@ -4,22 +4,22 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Index - Voice Enabled Chatbot using Node-RED</title>
-    <link rel="stylesheet" href="../../css/theme.css" />
-    <link rel="stylesheet" href="../../css/theme_extra.css" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>bakREADME - Voice Enabled Chatbot using Node-RED</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Index";
-        var mkdocs_page_input_path = "Solution-Starter-Kit-Communication-2020/node-red/README.md";
+        var mkdocs_page_name = "bakREADME";
+        var mkdocs_page_input_path = "Solution-Starter-Kit-Communication-2020/node-red/bakREADME.md";
         var mkdocs_page_url = null;
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
+      <script src="../../../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
       <script>hljs.initHighlightingOnLoad();</script> 
@@ -31,9 +31,9 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> Voice Enabled Chatbot using Node-RED
+          <a href="../../.." class="icon icon-home"> Voice Enabled Chatbot using Node-RED
         </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -41,15 +41,15 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../assistant/ASSISTANT/">Step 1: Create ChatBot using Watson Assistant</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../assistant/ASSISTANT/">Step 1: Create ChatBot using Watson Assistant</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../webhook/">Step 2: Adding Webhooks to Watson Assistant using IBM Functions</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../webhook/">Step 2: Adding Webhooks to Watson Assistant using IBM Functions</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Node-RED-chatbot/">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
+                <li class="toctree-l1"><a class="reference internal" href="../Node-RED-chatbot/">Step 3: Create Voice Enabled ChatBot using Node-RED</a>
                 </li>
               </ul>
       </div>
@@ -59,13 +59,13 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">Voice Enabled Chatbot using Node-RED</a>
+          <a href="../../..">Voice Enabled Chatbot using Node-RED</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Index</li>
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>bakREADME</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -106,7 +106,7 @@
 <h2 id="architecture-diagram">Architecture diagram</h2>
 <h3 id="voice-enabled-covid-crisis-communications-chatbot-using-node-red">Voice enabled COVID Crisis Communications Chatbot using Node-RED</h3>
 <p>The following diagram shows the workflow for a Node-RED chatbot that answers questions about COVID-19.</p>
-<p><img alt="Crisis Comms Architecture diagram" src="/images/Crisis-Comms-Architecture-Node-RED.png" /></p>
+<p><img alt="Crisis Comms Architecture diagram" src="../../images/Crisis-Comms-Architecture-Node-RED.png" /></p>
 <ol>
 <li>A user visits a voice enabled Node-RED website with the COVID-19 chatbot and asks a question.</li>
 <li>Node-RED records the speech wav audio format and calls the Watson Speech to Text service hosted in IBM Cloud.</li>
@@ -164,7 +164,7 @@
 <h3 id="import-and-deploy-the-covid-19-crisis-communication-chatbot-example">Import and deploy the COVID-19 crisis communication chatbot example</h3>
 <p>Now that you have installed the Node-RED dependencies, Watson nodes are available to integrate Watson AI services. Let's build a voice enabled chatbot example that uses Watson Assistant, Watson Speech to Text and Watson Text to Speech.</p>
 <p>Import this <a href="/starter-kit/node-red/flows/Node-RED-Voice-Enabled-Chatbot.json">flow</a> and <strong>Deploy</strong> the flow.</p>
-<p><img alt="Node-RED flow" src="images/Node-RED-COVIDChatBot-flow.png" /></p>
+<p><img alt="Node-RED flow" src="../images/Node-RED-COVIDChatBot-flow.png" /></p>
 <h3 id="create-watson-services-on-ibm-cloud">Create Watson Services on IBM Cloud</h3>
 <p>Before the flow will execute successfully, you must configure the Watson Assistant and Watson Speech nodes with new service instances and API Keys.</p>
 <h4 id="create-a-watson-assistant-instance">Create a Watson Assistant instance</h4>
@@ -181,39 +181,39 @@
 <ol>
 <li>Create a <a href="https://cloud.ibm.com/catalog/services/speech-to-text">Watson Speech to Text Service instance</a> instance from the IBM Cloud Catalog. Click <strong>Create</strong>.</li>
 </ol>
-<p><img alt="Create Watson Speech to Text service instance" src="images/Create-Watson-STT.png" /></p>
+<p><img alt="Create Watson Speech to Text service instance" src="../images/Create-Watson-STT.png" /></p>
 <p>The Node-RED Watson Speech to Text node will need the <code>apikey</code> credentials for this new instance.</p>
 <ol>
 <li>Once the Watson Speech to Text service is created, click <strong>Service credentials</strong> (1).</li>
 <li>Click the <strong>View credentials</strong> (2) twistie.</li>
 <li>Copy the <strong>apikey</strong> (3) for use in the next section
-   <img alt="Watson STT credentials" src="images/Watson-STT-apikey.png" />  </li>
+   <img alt="Watson STT credentials" src="../images/Watson-STT-apikey.png" />  </li>
 </ol>
 <h4 id="create-a-watson-text-to-speech-service-instance">Create a Watson Text to Speech service instance</h4>
 <p>Create a <a href="https://cloud.ibm.com/catalog/services/text-to-speech">Watson Text to Speech Service</a> instance from the IBM Cloud Catalog.</p>
 <ol>
 <li>Click <strong>Create</strong>.
-   <img alt="Create Watson Tex text Speech service instance" src="images/Create-Watson-TTS.png" /></li>
+   <img alt="Create Watson Tex text Speech service instance" src="../images/Create-Watson-TTS.png" /></li>
 </ol>
 <p>The Node-RED Watson Text to Speech node will need the apikey credentials for this new instance</p>
 <ol>
 <li>After you create the Watson Text to Speech service, click <strong>Service credentials</strong> (1).</li>
 <li>Click the <strong>View credentials</strong> (2) twistie.</li>
 <li>Copy the <strong>apikey</strong> (3) for use in the next section.
-   <img alt="Watson TTS credentials" src="images/Watson-TTS-apikey.png" />  </li>
+   <img alt="Watson TTS credentials" src="../images/Watson-TTS-apikey.png" />  </li>
 </ol>
 <h3 id="enable-watson-speech-nodes-with-api-keys">Enable Watson Speech Nodes with API keys</h3>
 <ol>
 <li>Double click the <strong>speech to text</strong> node and paste the API key from the Watson Speech to Text service instance.</li>
 <li>
 <p>Click <strong>Done</strong>.
-   <img alt="Config Watson STT Node" src="images/Config-Watson-STT-node.png" /></p>
+   <img alt="Config Watson STT Node" src="../images/Config-Watson-STT-node.png" /></p>
 </li>
 <li>
 <p>Double-click the <strong>text to speech</strong> node and paste the API key from the Watson Text to Speech service instance.</p>
 </li>
 <li>Click <strong>Done</strong>.
-   <img alt="Config Watson TTS Node" src="images/Config-Watson-TTS-node.png" /></li>
+   <img alt="Config Watson TTS Node" src="../images/Config-Watson-TTS-node.png" /></li>
 </ol>
 <h3 id="enable-watson-assistant-node-with-the-covid-19-workspace-id-and-api-key">Enable Watson Assistant node with the COVID-19 Workspace ID and API key</h3>
 <ol>
@@ -222,7 +222,7 @@
 </li>
 <li>
 <p>Click <strong>Done</strong>.
-   <img alt="Config Watson Assistant Node" src="images/Config-Watson-Assistant-node.png" /></p>
+   <img alt="Config Watson Assistant Node" src="../images/Config-Watson-Assistant-node.png" /></p>
 </li>
 </ol>
 <h3 id="parse-intents-and-invoke-api-calls">Parse intents and invoke API calls</h3>
@@ -237,19 +237,19 @@
 </ul>
 <h3 id="talk-to-your-covid-19-crisis-chatbot">Talk to your COVID-19 crisis chatbot</h3>
 <p>To talk to your chatbot, click on the <strong>microphone</strong> input button and ask a question about COVID-19.</p>
-<p><img alt="Node-RED Chatbot Dashboard" src="images/Node-RED-COVIDChatBot-Dashboard.png" /></p>
+<p><img alt="Node-RED Chatbot Dashboard" src="../images/Node-RED-COVIDChatBot-Dashboard.png" /></p>
 <p>When someone asks a question, here's the Node-RED flow that happens in the background:</p>
-<p><img alt="Node-RED flow" src="images/Talk2COVIDChatBot.png" /></p>
+<p><img alt="Node-RED flow" src="../images/Talk2COVIDChatBot.png" /></p>
 <h3 id="build-a-node-red-covid-statistics-dashboard">Build a Node-RED COVID statistics dashboard</h3>
 <p><strong>Bonus</strong>: This flow includes a Node-RED dashboard with several gauges to display COVID-19 statistics.</p>
-<p><img alt="Node-RED COVID Data Dashboard" src="images/Node-RED-COVID-Dashboard.png" /></p>
+<p><img alt="Node-RED COVID Data Dashboard" src="../images/Node-RED-COVID-Dashboard.png" /></p>
 <ul>
 <li>Every hour, the Node-RED flow will call the <a href="https://api.covid19api.com/summary">covid19api</a> summary API and collect dynamic COVID-19 infection statistics.</li>
 <li>The country data is aggregated and then the gauges are updated.</li>
 </ul>
 <h3 id="learn-more-about-the-dashboard-code">Learn more about the dashboard code</h3>
 <p>The following Node-RED flow is included in this tutorial:</p>
-<p><img alt="Node-RED COVID Data Dashboard" src="images/Node-RED-COVID-Dashboard-flow.png" /></p>
+<p><img alt="Node-RED COVID Data Dashboard" src="../images/Node-RED-COVID-Dashboard-flow.png" /></p>
 <p>The <code>http request</code> node uses the <a href="https://api.covid19api.com/summary">public Covid-19 API</a> to retrieve the daily information for all countries with infections.</p>
 <p>Here's the sample JSON object from the summary API:</p>
 <pre><code class="language-json">{&quot;Country&quot;:&quot;US&quot;,&quot;Slug&quot;:&quot;us&quot;,&quot;NewConfirmed&quot;:18058,&quot;TotalConfirmed&quot;:83836,&quot;NewDeaths&quot;:267,&quot;TotalDeaths&quot;:1209,&quot;NewRecovered&quot;:320,&quot;TotalRecovered&quot;:681},
@@ -296,10 +296,10 @@ return msg;
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

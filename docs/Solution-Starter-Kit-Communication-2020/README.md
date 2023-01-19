@@ -1,8 +1,13 @@
 # COVID Crisis Communications Starter Kit
 
-This solution starter was created by technologists from IBM.  Translations are available: [JP](/README_JP.md)
+> **Warning**
+>This is material is part of the World Wide IBM Call for Code in 2020 Solution Starter Kit.  Some links may not be working, however, the original contents are kept for reference only.
 
-<!-- ## Authors
+
+This solution starter was created by technologists from IBM.  
+<!-- Translations are available: [JP](/README_JP.md) -->
+
+<!-- ## Authors -- the team
 
 - [Donna Byron](https://developer.ibm.com/profiles/dkbyron/) - IBM
 - [John Walicki](https://developer.ibm.com/profiles/walicki/) - IBM
@@ -61,7 +66,7 @@ The challenge for you is to build out from this framework to create a more compl
 
 ### Website integration with COVID-19 crisis communication chatbot
 
-![Crisis Comms Architecture diagram](/images/Crisis-Comms-Architecture-Nodejs-WebServer.png)
+![Crisis Comms Architecture diagram](images/Crisis-Comms-Architecture-Nodejs-WebServer.png)
 
 1. User visits a website with the COVID-19 chatbot and asks a question.
 2. Node.js web server calls the Watson Assistant service hosted in IBM Cloud.
@@ -77,7 +82,7 @@ The challenge for you is to build out from this framework to create a more compl
 
 ### Slack integration with COVID-19 crisis communication chatbot
 
-![Crisis Comms Architecture diagram](/images/Crisis-Comms-Architecture-Slack-Integration.png)
+![Crisis Comms Architecture diagram](images/Crisis-Comms-Architecture-Slack-Integration.png)
 
 1. User invokes a COVID-19 Slack integration chatbot app and asks a question.
 2. Slack app calls the Watson Assistant service hosted in IBM Cloud.
@@ -93,7 +98,7 @@ The challenge for you is to build out from this framework to create a more compl
 
 ### Voice enabled COVID-19 crisis communication chatbot using Node-RED
 
-![Crisis Comms Architecture diagram](/images/Crisis-Comms-Architecture-Node-RED.png)
+![Crisis Comms Architecture diagram](images/Crisis-Comms-Architecture-Node-RED.png)
 
 1. User visits a voice-enabled Node-RED website with the COVID-19 chatbot and asks a question.
 2. Node-RED records the speech wav file and calls the Watson Speech to Text service hosted in IBM Cloud.
@@ -159,39 +164,39 @@ The challenge for you is to build out from this framework to create a more compl
 Log in to IBM Cloud and provision a Watson Assistant instance.
 
 **Step 1.** From the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant), provision an an instance of **Watson Assistant**.
-  ![Watson Assistant Catalog](/starter-kit/assistant/WA-Photo1.png)
+  ![Watson Assistant Catalog](assistant/images/WA-Photo1.png)
 
 **Step 2.**  Launch the Watson Assistant service.
 
 **Step 3.** Click **Create assistant** and follow [these detailed instructions](https://cloud.ibm.com/docs/assistant?topic=assistant-assistant-add) for how to create an assistant.
-  ![Watson Assistant Photo2 ](/starter-kit/assistant/WA-Photo2.png)
+  ![Watson Assistant Photo2 ](assistant/images/WA-Photo2.png)
 
 **Step 4.** Name the Watson Assistant instance **COVID Crisis Communication**
-  ![Watson Assistant Photo3 ](/starter-kit/assistant/WA-Photo3.png)
+  ![Watson Assistant Photo3 ](assistant/images/WA-Photo3.png)
 
 **Step 5.** Click **Add Dialog skill** to add this to your assistant. Follow [the documentation](https://cloud.ibm.com/docs/assistant?topic=assistant-skill-dialog-add) if you have questions.
-  ![Watson Assistant Photo4 ](/starter-kit/assistant/WA-Photo4.png)
+  ![Watson Assistant Photo4 ](assistant/images/WA-Photo4.png)
 
-**Step 6.** Click **Import skill > Choose JSON file** and import the [`skill-CDC-COVID-FAQ.json`](./starter-kit/assistant/skill-CDC-COVID-FAQ.json) file.
-  ![Watson Assistant Photo5 ](/starter-kit/assistant/WA-Photo5.png)
+**Step 6.** Click **Import skill > Choose JSON file** and import the [`skill-CDC-COVID-FAQ.json`](assistant/skill-CDC-COVID-FAQ.json) file.
+  ![Watson Assistant Photo5 ](assistant/images/WA-Photo5.png)
 
 **Step 7.** Go back to the All Assistants page. From the action menu ( **`⋮`** ), open **Settings**.
-  ![Watson Assistant Photo6 ](/starter-kit/assistant/WA-Photo6.png)
+  ![Watson Assistant Photo6 ](assistant/images/WA-Photo6.png)
 
 **Step 8.**  On the Settings tab, click **API Details** on the left and make a note of the `Assistant ID` and `Api Key` for future use.
-  ![Watson Assistant Photo7 ](/starter-kit/assistant/WA-Photo7.png)
+  ![Watson Assistant Photo7 ](assistant/images/WA-Photo7.png)
 
 **Step 9.** Go back to the All Assistants page and click on the **Skills** link.
-  ![Watson Assistant Skills ](/starter-kit/assistant/WA-Skills.png)
+  ![Watson Assistant Skills ](assistant/images/WA-Skills.png)
 
 **Step 10.** On the Skill page, click on the action menu ( **`⋮`** ), open **View API Details**.
-  ![Watson Assistant Skill Properties](/starter-kit/assistant/WA-SkillAPIProperties.png)
+  ![Watson Assistant Skill Properties](assistant/images/WA-SkillAPIProperties.png)
 
 **Step 11.** On the Skill Details page, make note of the `Skill ID` for future use.
-  ![Watson Assistant Skill Details](/starter-kit/assistant/WA-SkillDetails.png)
+  ![Watson Assistant Skill Details](assistant/images/WA-SkillDetails.png)
 
 **Step 12.**  Go back to your dialog skill and click on the **Preview Link** button on the side to get a link to test and verify your assistant.
-  ![Watson Assistant Photo9 ](/starter-kit/assistant/WA-Photo91.png)
+  ![Watson Assistant Photo9 ](assistant/images/WA-Photo91.png)
 
 **Step 13.** Ask the Watson Assistant chatbot some questions about COVID-19.
 <p align="center">
@@ -205,7 +210,7 @@ Now that you’ve created your Watson Assistant-enabled chatbot, you need to con
 
 A webhook is a mechanism that allows you to call out to an external program based on something happening in your program. When used in a dialog skill, a webhook is triggered when the assistant processes a node that has a webhook enabled. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables. It sends the data as part of a HTTP POST request to the URL that you specify as part of your webhook definition. The URL that receives the webhook is the listener. It performs a predefined action using the information that you pass to it as specified in the webhook definition, and can optionally return a response.
 
-[Follow these instructions for setting up webhook](./starter-kit/webhook/README.md) with the Watson Assistant chatbot you just provisioned.
+[Follow these instructions for setting up webhook](webhook/README.md) with the Watson Assistant chatbot you just provisioned.
 
 ### Integrate your COVID-19 chatbot with Slack
 
@@ -213,19 +218,19 @@ Now that you have a functioning Watson Assistant, let's deploy it to Slack. Slac
 
 When integrated, depending on the events that you configure the assistant to support, your assistant can respond to questions that are asked in direct messages or in channels where the assistant is directly mentioned.
 
-[Read these instructions](/starter-kit/slack/README.md) to learn how to integrate your COVID-19 chatbot with Slack.
+[Read these instructions](https://github.com/IraAngeles-IBM/Solution-Starter-Kit-Communication-2020/blob/master/starter-kit/slack/README.md) to learn how to integrate your COVID-19 chatbot with Slack.
 
-![Slack Gif](/starter-kit/slack/readme_images/Slack.gif)
+![Slack Gif](https://raw.githubusercontent.com/IraAngeles-IBM/Solution-Starter-Kit-Communication-2020/master/starter-kit/slack/readme_images/Slack.gif)
 
 ### Integrate your COVID-19 chatbot with Node-RED
 
-Want to create a voice-enabled chatbot? This tutorial teaches you how to [create a voice enabled chatbot using Node-RED](./starter-kit/node-red/README.md) and the Watson Assistant, Watson Speech to Text, and Watson Text to Speech nodes.
+Want to create a voice-enabled chatbot? This tutorial teaches you how to [create a voice enabled chatbot using Node-RED](node-red/README.md) and the Watson Assistant, Watson Speech to Text, and Watson Text to Speech nodes.
 
 ### Embed your COVID-19 chatbot on a Node.js website
 
 Finally, you can embed your COVID-19 crisis communication chatbot on a Node.js website.
 
-- Follow the [COVID-Simple installation instructions](./starter-kit/covid-simple/README.md)
+- Follow the [COVID-Simple installation instructions](https://github.com/IraAngeles-IBM/Solution-Starter-Kit-Communication-2020/tree/master/starter-kit/covid-simple)
 
 ## Disclosures
 
