@@ -1,6 +1,10 @@
 site_name: Voice Enabled Chatbot using Node-RED
 theme:
     name: readthedocs
+    repo: fontawesome/brands/github
+    features:
+        - content.action.view
+
 nav:
     # - Home: 'index.md'
     - 'Step 1: Create ChatBot using Watson Assistant': './Solution-Starter-Kit-Communication-2020/assistant/README.md'
@@ -10,3 +14,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+
+repo_url: https://github.com/IraAngeles-IBM/watson-ai-voice-enabled-chatbot
+edit_uri: blob/main/docs
+# repo_name: IraAngeles-IBM/watson-ai-voice-enabled-chatbot
